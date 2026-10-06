@@ -377,10 +377,31 @@
 
 .animate-marquee {
   animation: marquee var(--duration, 40s) linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration, 40s) linear infinite;
+  will-change: transform;
+}
+
+/* M5 — slower on phones (~60s per loop), will-change only while running */
+@media (max-width: 639px) {
+  .animate-marquee,
+  .animate-marquee-vertical {
+    animation-duration: var(--duration-mobile, 60s);
+  }
+}
+
+.marquee-paused {
+  animation-play-state: paused !important;
+  will-change: auto !important;
+}
+
+/* Edge fades (mask, no paint cost) */
+.marquee-fade {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 /* Aurora Background Animation */

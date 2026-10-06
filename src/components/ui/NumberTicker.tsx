@@ -3,6 +3,12 @@ import { useInView, useMotionValue, useSpring } from 'motion/react';
 import { cn } from '../../lib/utils';
 import { isReducedMotion } from '../../lib/motion';
 
+/**
+ * D3/M5 — NumberTicker. Counts once when in view (~1.2s spring ease-out).
+ * Screen readers get the FINAL value (sr-only), never the count-up; the
+ * animated span is aria-hidden. Instant under reduced motion.
+ * tabular-nums — the width never jumps.
+ */
 interface NumberTickerProps {
   value: number;
   direction?: 'up' | 'down';
@@ -61,13 +67,16 @@ export const NumberTicker: React.FC<NumberTickerProps> = ({
   }, [springValue, decimalPlaces]);
 
   return (
-    <span
-      className={cn('inline-block tabular-nums', className)}
-      ref={ref}
-      aria-label={formattedValue}
-    >
-      {formattedValue}
-    </span>
+    <>
+      <span
+        className={cn('inline-block tabular-nums', className)}
+        ref={ref}
+        aria-hidden="true"
+      >
+        {formattedValue}
+      </span>
+      <span className="sr-only">{formattedValue}</span>
+    </>
   );
 };
 
