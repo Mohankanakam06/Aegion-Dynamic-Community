@@ -153,9 +153,9 @@
     color: #181411;
   }
 
-  /* Accessible Focus Rings */
+  /* Accessible Focus Rings (2px text-safe ember ring + 2px offset) */
   :focus-visible {
-    outline: 2px solid var(--primary);
+    outline: 2px solid var(--focus-ring, var(--primary));
     outline-offset: 2px;
   }
 
@@ -451,8 +451,12 @@
   .animate-border-beam,
   .animate-spotlight,
   .animate-marquee,
+  .animate-pulse-soft,
   .skeleton-shimmer::after {
     animation: none !important;
+  }
+  .accent-underline {
+    transition: none !important;
   }
   .tilt-card {
     transition: none !important;
@@ -479,4 +483,88 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
+}
+
+/* ==========================================================================
+   GATE A — KIT FOUNDATION TOKENS & UTILITIES
+   ========================================================================== */
+@layer base {
+  :root {
+    /* A1 — Container measures & fluid section rhythm (64 → 128px) */
+    --container-prose: 68ch;
+    --container-content: 70rem;    /* 1120px */
+    --container-wide: 80rem;       /* 1280px */
+    --section-sm: clamp(3rem, 6vw, 4rem);
+    --section-md: clamp(4rem, 8vw, 6rem);
+    --section-lg: clamp(4rem, 8vw, 8rem);
+
+    /* Focus rings: 2px ring + 2px offset (ember on light, cream on charcoal) */
+    --focus-ring: var(--ember-deep);
+    --focus-ring-on-dark: var(--cream);
+
+    /* Shared motion tokens (micro 120–200ms, reveals ≤ 500ms) */
+    --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-micro: 160ms;
+    --duration-reveal: 450ms;
+  }
+}
+
+/* Focus ring utilities (usable with focus-visible:) */
+@utility focus-ring {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@utility focus-ring-cream {
+  outline: 2px solid var(--focus-ring-on-dark);
+  outline-offset: 2px;
+}
+
+/* A2 — Eyebrow pulsing dot (2.4s; static under reduced motion) */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.75); }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.4s var(--ease-standard) infinite;
+}
+
+/* A3 — Accent underline: draws once on view (650ms), survives line wraps */
+.accent-underline {
+  padding-bottom: 0.06em;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size 650ms var(--ease-standard);
+}
+
+.accent-underline.is-drawn {
+  background-size: 100% 2px;
+}
+
+/* A9 — Card spotlight (effect #3; hover-capable fine pointers only) */
+.card-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-micro) var(--ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-spotlight {
+    background: radial-gradient(
+      240px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(232, 93, 26, 0.07),
+      transparent 70%
+    );
+  }
+  .card-interactive:hover .card-spotlight {
+    opacity: 1;
+  }
 }

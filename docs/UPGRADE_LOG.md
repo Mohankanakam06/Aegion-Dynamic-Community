@@ -21,9 +21,17 @@
 5. `--ink-muted` (3.88:1) is used for 11px meta text (below AA 4.5:1); remap to a passing token during component migration.
 
 ## Open Decisions / Pending Microcopy
-- **A6 primary color:** user decides between the two kit candidates at Gate A review.
+- **A6 primary color:** user decides between the two kit candidates at Gate A review (kit block `buttons`: candidate 1 white-on-#C4460E 4.97:1 recommended; candidate 2 ink-on-#E85D1A 5.24:1).
 - **Microcopy pending approval:** "(opens in a new tab)" sr-only suffix on external links (A5). Validation/success/error strings arrive at Gate B.
 - **Contact backend:** user chooses before Gate E.
+- **Gate B heads-up:** `--color-warning` (#D97706) is 3.09:1 on cream — fails AA; a darker warning text token needs approval with the Gate B swatches. `--ink-muted` (3.88:1) must not carry real text.
+
+## Gate A Notes
+- LazyMotion wired with `domAnimation` (zero bundle cost today: legacy `motion.*` components already include those features). **Switch to `domMax` at Gate C** for layoutId pills — one-line change in `src/App.tsx`.
+- `vite-imagetools@10.0.1` pinned (v11+ requires Vite ≥8; we stay on Vite 7 per rules).
+- Tailwind v4 hover/translate gotcha encoded in components: v4 sets standalone `translate`/`scale` properties, so transition lists include `translate,scale` (not `transform`).
+- axe on /__kit scoped to `main`: 0 serious/critical. Two KNOWN violations live in the legacy chrome (Header CTA white-on-ember 3.49:1; footer white/40 label 3.9:1) — fixed at Gates C1/C2.
+- Existing pages now get real Reveal via the shim (`ui/Reveal.tsx` → `motion/Reveal.tsx`); pages migrate fully during assembly gates, shim deleted then.
 
 ## Completed Steps
 - **Step 0 — Safety Check & Dark Theme Revert:**
@@ -31,6 +39,11 @@
   - Created `docs/UPGRADE_RULES.md` and `docs/UPGRADE_LOG.md`.
   - Reverted dark theme code in `index.html`, `src/styles/globals.css`, and `src/components/layout/Header.tsx`.
 - **Phase 1 — Baseline & Audit:** route screenshots + copy dumps in `docs/baseline/`; inventory delivered 2026-10-06 (component map, duplication tally, install table, typo list). Approved.
+- **Gate A — Foundations A1–A10 (commit pending):**
+  - Built: Container, Section, Eyebrow, Accent, SectionHeader, Link, Button (+IconButton, Spinner), Badge, IconTile, Card, Photo, motion/Reveal, motion/Stagger; `components.json` (shadcn, manual init — CLI never touches globals.css); `scripts/check-light-only.mjs` as `prebuild`; dev-only `/__kit` (excluded from prod bundle, verified); `scripts/kit-shots.mjs` (Playwright states + axe), `scripts/contrast.mjs`.
+  - Absorbed Phase-2 gaps: container tokens, shadcn init, real Reveal/Stagger.
+  - Verified: tsc ✓, 28/28 tests ✓, build ✓ (guard passes), axe /__kit 0 serious/critical, shots at 375/1440 in `docs/gates/gate-a/`.
+  - Bundle delta: index +0.25KB gz, vendor-motion +0.01KB gz, CSS +1.48KB gz → **≈ +1.7KB gz total**.
 
 ## Bundle Baseline (commit `7aeeca5`, pre-Gate-A)
 - JS: index 129.98KB gz, vendor-motion 35.31KB, vendor-gsap 32.74KB, vendor-react 17.48KB, vendor-icons 3.06KB → **~219KB gz total**

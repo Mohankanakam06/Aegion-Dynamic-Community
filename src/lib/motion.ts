@@ -5,6 +5,23 @@ export const isReducedMotion = (): boolean => {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 };
 
+/* ==========================================================================
+   GATE A — SHARED MOTION TOKENS (one easing, one indicator spring)
+   ========================================================================== */
+export const EASE_STANDARD: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+export const DURATION = {
+  micro: 0.16,
+  reveal: 0.45,
+} as const;
+
+/** Spring for sliding indicators (nav pills, filter pills) — tune by eye. */
+export const SPRING_INDICATOR: Transition = {
+  type: 'spring',
+  stiffness: 380,
+  damping: 30,
+};
+
 export const springTransition: Transition = {
   type: 'spring',
   damping: 25,

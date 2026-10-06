@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { MotionConfig } from 'motion/react';
+import { MotionConfig, LazyMotion, domAnimation } from 'motion/react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,6 +14,14 @@ import { Stories } from './pages/Stories';
 import { Contact } from './pages/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
+
+/* LazyMotion features: domAnimation now; switch to domMax at Gate C (layoutId
+   pills need layout animations). Kept as a static import so Rollup keeps all
+   Motion code inside the cached vendor-motion chunk. */
+const motionFeatures = domAnimation;
+
+/* Dev-only component kit route — never registered (or bundled) in production. */
+const Kit = import.meta.env.DEV ? lazy(() => import('./pages/__kit')) : null;
 
 export function App() {
   useEffect(() => {
@@ -42,21 +50,33 @@ export function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen flex flex-col bg-[var(--cream)] text-[var(--ink)] antialiased font-sans selection:bg-[var(--amber)] selection:text-[var(--ink)]">
-        <ScrollToTop />
-        <Header />
-        <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/stories" element={<Stories />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <LazyMotion features={motionFeatures}>
+        <div className="min-h-screen flex flex-col bg-[var(--cream)] text-[var(--ink)] antialiased font-sans selection:bg-[var(--amber)] selection:text-[var(--ink)]">
+          <ScrollToTop />
+          <Header />
+          <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/stories" element={<Stories />} />
+              <Route path="/contact" element={<Contact />} />
+              {Kit && (
+                <Route
+                  path="/__kit"
+                  element={
+                    <Suspense fallback={null}>
+                      <Kit />
+                    </Suspense>
+                  }
+                />
+              )}
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </LazyMotion>
     </MotionConfig>
   );
 }

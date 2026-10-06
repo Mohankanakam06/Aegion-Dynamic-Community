@@ -21,3 +21,14 @@ declare module '*.svg' {
   const src: string;
   export default src;
 }
+
+/* vite-imagetools query imports (queries end with &imagetools) */
+declare module '*&as=srcset&imagetools' {
+  const srcset: string;
+  export default srcset;
+}
+
+declare module '*&as=meta&imagetools' {
+  const meta: { src: string; width: number; height: number; format: string };
+  export default meta;
+}
