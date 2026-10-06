@@ -71,7 +71,7 @@
     --color-error: #DC2626;
     --color-error-bg: #FEF2F2;
     --color-error-border: #FECACA;
-    --color-warning: #D97706;
+    --color-warning: #B45309; /* 4.87:1 on cream, 5.02:1 on white (approved) */
     --color-warning-bg: #FFFBEB;
     --color-warning-border: #FDE68A;
     --color-info: #0284C7;

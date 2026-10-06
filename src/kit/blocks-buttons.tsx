@@ -15,33 +15,11 @@ export function ButtonBlocks() {
         title="A6 — Button"
         note="Pill, 44px+ touch targets, asChild for router Links. Hover = 1px lift + shadow step + icon nudge; active = scale .98; loading = spinner replaces icon (width locked) + aria-busy. States below: hover/focus/active are captured with Playwright; disabled/loading render statically."
       >
-        <KitRow label="PRIMARY COLOR — decision needed (both measured AA)">
-          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="rounded-[var(--radius-md)] border-2 border-[var(--ember-deep)] bg-[var(--cream)] p-5">
-              <p className="mb-1 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--ember-deep)]">
-                Candidate 1 — recommended
-              </p>
-              <p className="mb-4 text-xs text-[var(--ink-soft)]">
-                White on deeper ember #C4460E — 4.96:1 (AA ✓)
-              </p>
-              <Button data-shot="btn-primary" icon={ArrowRight}>
-                Join Sunday Sprint
-              </Button>
-            </div>
-            <div className="rounded-[var(--radius-md)] border border-[var(--line)] bg-[var(--cream)] p-5">
-              <p className="mb-1 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--ink-soft)]">
-                Candidate 2
-              </p>
-              <p className="mb-4 text-xs text-[var(--ink-soft)]">
-                Ink on bright ember #E85D1A — 5.24:1 (AA ✓)
-              </p>
-              <Button
-                icon={ArrowRight}
-                className="bg-[var(--ember)] text-[var(--ink)] hover:bg-[var(--ember-light)]"
-              >
-                Join Sunday Sprint
-              </Button>
-            </div>
+        <KitRow label="PRIMARY COLOR — APPROVED: white on #C4460E (4.96:1, AA)">
+          <div className="rounded-[var(--radius-md)] border-2 border-[var(--ember-deep)] bg-[var(--cream)] p-5">
+            <Button data-shot="btn-primary" icon={ArrowRight}>
+              Join Sunday Sprint
+            </Button>
           </div>
         </KitRow>
         <KitRow label="Variants × sizes">

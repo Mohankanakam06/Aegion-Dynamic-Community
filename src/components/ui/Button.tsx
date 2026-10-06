@@ -10,9 +10,7 @@ import { Spinner } from './Spinner';
  * Hover = 1px lift + shadow step + icon nudge 3px; active = scale .98;
  * loading = spinner replaces the icon (same 16px footprint, width locked) + aria-busy.
  *
- * PRIMARY COLOR — pending user decision (Gate A kit shows both candidates):
- * default is candidate 1 (recommended): white on text-safe ember #C4460E (4.96:1, AA).
- * Candidate 2 (ink on bright ember #E85D1A) is shown in /__kit via className override.
+ * PRIMARY COLOR — APPROVED: white on text-safe ember #C4460E (4.96:1, AA).
  */
 const buttonVariants = cva(
   'group/btn inline-flex select-none items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold transition-[translate,scale,box-shadow,background-color,border-color,color] duration-150 ease-[var(--ease-standard)] focus-visible:focus-ring active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60',

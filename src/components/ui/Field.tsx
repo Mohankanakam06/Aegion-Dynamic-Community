@@ -44,7 +44,7 @@ export function Field({
       <div className="mb-2 flex items-baseline justify-between gap-4">
         <label
           htmlFor={id}
-          className="block font-mono text-xs font-semibold uppercase tracking-wider text-[var(--ink)]"
+          className="block text-[13px] font-medium text-[var(--ink)]"
         >
           {label}
           {required && (

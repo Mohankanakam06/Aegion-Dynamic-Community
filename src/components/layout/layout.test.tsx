@@ -21,15 +21,16 @@ describe('Layout Components', () => {
       expect(screen.getByText('Connect')).toBeDefined();
     });
 
-    it('toggles mobile menu when menu button is clicked', () => {
+    it('opens the mobile navigation sheet when the menu button is clicked', async () => {
       render(
         <MemoryRouter>
           <Header />
         </MemoryRouter>
       );
-      const menuBtn = screen.getByRole('button', { name: /toggle navigation menu/i });
+      const menuBtn = screen.getByRole('button', { name: /open navigation menu/i });
       fireEvent.click(menuBtn);
-      expect(screen.getByRole('dialog')).toBeDefined();
+      expect(await screen.findByRole('dialog')).toBeDefined();
+      expect(await screen.findByRole('navigation', { name: /mobile navigation/i })).toBeDefined();
     });
   });
 

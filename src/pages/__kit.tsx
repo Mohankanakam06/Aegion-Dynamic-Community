@@ -15,6 +15,7 @@ const INDEX = [
   { id: 'labels', label: '⚑ Labels' },
   { id: 'numbertag', label: '⚑ NumberTag' },
   { id: 'mobilenav', label: '⚑ MobileNav' },
+  { id: 'stickybar', label: '⚑ StickyBar' },
   { id: 'container', label: 'Container' },
   { id: 'eyebrow', label: 'Eyebrow' },
   { id: 'tokens-semantic', label: '⚑ Semantics' },

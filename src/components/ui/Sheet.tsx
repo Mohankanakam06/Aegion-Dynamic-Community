@@ -5,11 +5,11 @@ import { cn } from '../../lib/utils';
 import { IconButton } from './IconButton';
 
 /**
- * B6/M2 — Sheet (Radix Dialog, drawer variant). Slides in 200ms. Focus trap and
- * return, Esc, scroll lock without layout shift, close IconButton.
- * side="right": right drawer. side="bottom": bottom sheet with drag handle.
- * Swipe-to-close (touch only): swipe right (right drawer) or down (bottom sheet)
- * past 80px; the sheet follows the finger and snaps back under the threshold.
+ * M2-final — Sheet (Radix Dialog, bottom sheet). Slides up 200ms. Focus trap and
+ * return, Esc, scroll lock without layout shift, close IconButton, drag handle.
+ * Swipe-to-close (touch only): starts from the drag handle / header area, or
+ * anywhere when the content is scrolled to the very top; a swipe down inside a
+ * scrollable list always scrolls the list instead. Max height 90dvh.
  */
 export const Sheet = DialogPrimitive.Root;
 export const SheetTrigger = DialogPrimitive.Trigger;
@@ -42,31 +42,29 @@ SheetDescription.displayName = 'SheetDescription';
 export interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
   closeLabel?: string;
-  /** right = right drawer (mobile nav default); bottom = bottom sheet with handle. */
-  side?: 'right' | 'bottom';
-  /** Called when the user swipe-dismisses past the threshold. */
+  /** Called when the user swipe-dismisses past the 80px threshold. */
   onSwipeClose?: () => void;
 }
 
 export const SheetContent = React.forwardRef<
   React.ComponentRef<typeof DialogPrimitive.Content>,
   SheetContentProps
->(({ className, children, closeLabel = 'Close', side = 'right', onSwipeClose, ...props }, ref) => {
+>(({ className, children, closeLabel = 'Close', onSwipeClose, ...props }, ref) => {
   const drag = useRef({ active: false, start: 0, delta: 0 });
 
   const onPointerDown = (e: React.PointerEvent<HTMLElement>) => {
     if (e.pointerType === 'mouse' || !onSwipeClose) return;
-    if (side === 'bottom' && e.currentTarget.scrollTop > 0) return;
-    drag.current = { active: true, start: side === 'bottom' ? e.clientY : e.clientX, delta: 0 };
+    // A scrollable list owns the gesture unless it is at the very top.
+    const scrollable = (e.target as HTMLElement).closest('[data-sheet-scroll]');
+    if (scrollable && scrollable.scrollTop > 0) return;
+    drag.current = { active: true, start: e.clientY, delta: 0 };
   };
   const onPointerMove = (e: React.PointerEvent<HTMLElement>) => {
     if (!drag.current.active) return;
-    const pos = side === 'bottom' ? e.clientY : e.clientX;
-    const delta = Math.max(0, pos - drag.current.start);
+    const delta = Math.max(0, e.clientY - drag.current.start);
     drag.current.delta = delta;
     e.currentTarget.style.transition = 'none';
-    e.currentTarget.style.transform =
-      side === 'bottom' ? `translateY(${delta}px)` : `translateX(${delta}px)`;
+    e.currentTarget.style.transform = `translateY(${delta}px)`;
   };
   const endDrag = (e: React.PointerEvent<HTMLElement>) => {
     if (!drag.current.active) return;
@@ -87,25 +85,19 @@ export const SheetContent = React.forwardRef<
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
         className={cn(
-          'fixed z-50 flex flex-col overflow-y-auto bg-[var(--cream)] shadow-2xl',
-          side === 'right' &&
-            'sheet-content inset-y-0 right-0 w-full max-w-sm border-l border-[var(--line-strong)] p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] pr-[max(1.5rem,env(safe-area-inset-right))]',
-          side === 'bottom' &&
-            'sheet-content-bottom inset-x-0 bottom-0 top-auto max-h-[92dvh] w-full rounded-t-[var(--radius-xl)] border-t border-[var(--line-strong)] p-6 pt-3 pb-[max(1.5rem,env(safe-area-inset-bottom))]',
+          'sheet-content-bottom fixed inset-x-0 bottom-0 top-auto z-50 flex max-h-[90dvh] w-full flex-col overflow-y-auto rounded-t-[var(--radius-xl)] border-t border-[var(--line-strong)] bg-[var(--cream)] p-6 pt-3 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-2xl',
           className
         )}
         {...props}
       >
-        {side === 'bottom' && (
-          <div aria-hidden="true" className="mx-auto mb-4 h-1 w-10 shrink-0 rounded-full bg-[var(--line-strong)]" />
-        )}
+        <div aria-hidden="true" className="mx-auto mb-4 h-1 w-10 shrink-0 rounded-full bg-[var(--line-strong)]" />
         {children}
         <DialogPrimitive.Close asChild>
           <IconButton
             icon={X}
             aria-label={closeLabel}
             variant="ghost"
-            className="absolute right-4 top-4"
+            className="absolute right-4 top-3"
           />
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>

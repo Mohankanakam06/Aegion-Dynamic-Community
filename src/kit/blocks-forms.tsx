@@ -15,8 +15,8 @@ const ROLE_OPTIONS = [
 const SWATCHES = [
   { name: 'Danger / error', text: '#DC2626', ratio: '4.69:1 cream · 4.83:1 white', ok: true, sample: true },
   { name: 'Success', text: '#15803D', ratio: '4.87:1 cream · 5.02:1 white', ok: true, sample: true },
-  { name: 'Warning (proposed)', text: '#B45309', ratio: '4.87:1 cream · 5.02:1 white', ok: true, sample: true },
-  { name: 'Warning (current)', text: '#D97706', ratio: '3.09:1 — fails AA for text', ok: false, sample: false },
+  { name: 'Warning — FINAL', text: '#B45309', ratio: '4.87:1 cream · 5.02:1 white', ok: true, sample: true },
+  { name: 'Warning (old)', text: '#D97706', ratio: '3.09:1 — failed AA, replaced', ok: false, sample: false },
 ];
 
 /** Kit blocks: B1 Field + semantic swatches, B2 Input/Textarea, B3 ChoiceChips. */
@@ -28,8 +28,8 @@ export function FormBlocks() {
     <>
       <KitBlock
         id="tokens-semantic"
-        title="B1 — Semantic tokens (swatches for approval)"
-        note="Danger and success already pass AA on cream and white. Warning (#D97706) is 3.09:1 — it fails for text; the proposal keeps it for icons/large shapes only and introduces #B45309 for warning text."
+        title="B1 — Semantic tokens (warning FINAL: #B45309)"
+        note="Danger and success pass AA on cream and white. Warning text is now #B45309 (4.87:1 cream, 5.02:1 white — approved); the old #D97706 failed at 3.09:1 and is retired."
       >
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {SWATCHES.map((s) => (
@@ -57,24 +57,8 @@ export function FormBlocks() {
       <KitBlock
         id="field"
         title="B1 — Field"
-        note="Label + required (ember asterisk, aria-hidden) + hint (13px, 4.5:1) + error (icon + text). Wiring: htmlFor/id, aria-describedby (hint + error), aria-invalid. DECISION: label typography — Option 1 sans 13px (recommended, matches the new label system) vs Option 2 mono caps 12px (master-spec text)."
+        note="Label (sans, medium, 13px, title case — APPROVED, no mono caps) + required (ember asterisk, aria-hidden) + hint (13px, 4.5:1) + error (icon + text). Wiring: htmlFor/id, aria-describedby (hint + error), aria-invalid."
       >
-        <KitRow label="Label typography — pick one">
-          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="rounded-[var(--radius-md)] border-2 border-[var(--ember-deep)] p-4">
-              <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--ember-deep)]">Option 1 — recommended</p>
-              <p className="text-[13px] font-medium text-[var(--ink)]">
-                Your Name <span className="text-[var(--ember-deep)]">*</span>
-              </p>
-            </div>
-            <div className="rounded-[var(--radius-md)] border border-[var(--line)] p-4">
-              <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--ink-faint)]">Option 2 — master-spec text</p>
-              <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--ink)]">
-                Your Name <span className="text-[var(--ember-deep)]">*</span>
-              </p>
-            </div>
-          </div>
-        </KitRow>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <Field label="Your Name" required hint="So we know what to call you at Build Hours." control={<Input placeholder="e.g. Maya Shenoy" autoComplete="name" />} />
           <Field
@@ -89,18 +73,11 @@ export function FormBlocks() {
       <KitBlock
         id="input"
         title="B2 — Input + Textarea"
-        note="48px tall, sans 16px (stops iOS zoom), never mono. Focus = 2px ember ring via box-shadow (no layout shift) + border change; hover, error, disabled, read-only states; autofill colors fixed. DECISION: shape — pill (recommended, matches buttons) vs rounded-xl (today's inputs)."
+        note="48px tall, sans 16px (stops iOS zoom), never mono. Focus = 2px ember ring via box-shadow (no layout shift) + border change; hover, error, disabled, read-only states; autofill colors fixed. Shape — APPROVED: pill for single-line inputs, ~20px radius for the textarea."
       >
-        <KitRow label="Shape — pick one">
-          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
-              <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--ember-deep)]">Pill — recommended</p>
-              <Input data-shot="input-pill" placeholder="e.g. Maya Shenoy" />
-            </div>
-            <div>
-              <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--ink-faint)]">Rounded-xl — today</p>
-              <Input placeholder="e.g. Maya Shenoy" className="!rounded-xl" />
-            </div>
+        <KitRow label="Pill input (final)">
+          <div className="w-full max-w-md">
+            <Input data-shot="input-pill" placeholder="e.g. Maya Shenoy" />
           </div>
         </KitRow>
         <KitRow label="Disabled / read-only">
