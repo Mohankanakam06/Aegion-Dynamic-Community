@@ -557,6 +557,11 @@
   overscroll-behavior-y: contain;
 }
 
+/* M3 — sticky action bar never covers content (mounted only when visible) */
+body:has(.sticky-action-bar) main {
+  padding-bottom: 5rem;
+}
+
 /* B2 — Browser autofill: keep the cream/ink treatment (kills the yellow/blue default) */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

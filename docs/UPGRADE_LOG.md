@@ -69,4 +69,4 @@
 - CSS: 69.32KB (12.50KB gz). Largest image: community-feature.jpg 216KB. logo.svg 188KB.
 
 ## Current Step
-- **Gate B complete** (commit below). Next: **Gate C — Chrome & Navigation** (Header/DesktopNav/MobileNav/SkipLink, Footer, Marquee, FilterBar). Waiting on user decisions: A6 button candidate, B1 label typography, B2 input shape, warning token, microcopy batch.
+- **Gate M in progress (mobile-first).** Done: audit (P0–P2 table), M1 app shell (`d1e939f`), M2 bottom-sheet mobile nav (`700378a`; lazy sheet chunk = 15.4KB gz on first tap, initial JS +1KB). **Decisions APPROVED + applied:** button primary = white on #C4460E; B1 labels = sans medium 13px title case (no mono caps); B2 = pill inputs / 20px textarea; warning text = #B45309 (4.87:1 cream, 5.02:1 white). Awaiting M3 pick (sticky bottom action bar — kit render `#stickybar`). Note: landscape ≥768px (e.g. 844×390) intentionally gets the DESKTOP nav; the sheet is a <768px pattern.
