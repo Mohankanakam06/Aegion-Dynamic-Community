@@ -1,96 +1,115 @@
-import { KitBlock } from './KitBlock';
+import { KitBlock, KitRow } from './KitBlock';
 import { Eyebrow } from '../components/brand/Eyebrow';
-import type { LabelStyleId } from '../components/brand/label-style';
+import { NumberTag } from '../components/brand/NumberTag';
 
 import scrimAvif from '../assets/images/build-hours/1.jpg?w=480;768&format=avif&as=srcset&imagetools';
 import scrimWebp from '../assets/images/build-hours/1.jpg?w=480;768&format=webp&as=srcset&imagetools';
 import scrimJpg from '../assets/images/build-hours/1.jpg?w=480;768&format=jpeg&as=srcset&imagetools';
 import scrimMeta from '../assets/images/build-hours/1.jpg?w=768&format=jpeg&as=meta&imagetools';
 
-const OPTIONS: { id: LabelStyleId; name: string; spec: string }[] = [
-  { id: 'a', name: 'Option A — Dot separator', spec: 'Sans, medium, title case, 13px, +0.01em. Ember pulse dot, "·" between parts.' },
-  { id: 'b', name: 'Option B — Split pill', spec: 'Sans, semibold, 13px. Lead in ink, 1px hairline divider (16px), tail in text-safe ember.' },
-  { id: 'c', name: 'Option C — Mono refined', spec: 'JetBrains Mono, 12px, +0.04em, thin vertical divider. Check W, M, & and @ below.' },
-];
-
-/** Kit block: the three label-style candidates on cream, on a photo scrim, on charcoal. */
+/**
+ * Kit block: the FINAL label styles (user decision 2026-10-06) +
+ * the NumberTag demo awaiting approval before migration.
+ */
 export function LabelBlocks() {
   return (
-    <KitBlock
-      id="labels"
-      title="Label style — decision needed (pick A, B or C)"
-      note="The “//” separator and the mono-caps-wide-tracking style are removed site-wide. Words stay exactly as they are. Every option is ≥4.5:1 on its own background; the tail drops to a second line at 320px with the divider hidden; the pulse dot stays (static under reduced motion)."
-    >
-      {OPTIONS.map((opt) => (
-        <div key={opt.id} className="mb-10 border-b border-[var(--line)] pb-10 last:mb-0 last:border-0 last:pb-0">
-          <p className="mb-1 font-display text-base font-bold">{opt.name}</p>
-          <p className="mb-4 text-xs text-[var(--ink-soft)]">{opt.spec}</p>
-
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-            {/* On cream */}
-            <div className="rounded-[var(--radius-md)] border border-[var(--line)] bg-[var(--cream)] p-5">
-              <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--ink-faint)]">On cream</p>
-              <div className="flex flex-col items-start gap-3">
-                <Eyebrow styleOption={opt.id} variant="pill" dot lead="Visakhapatnam, AP" tail="Weekly Build Circle" />
-                <Eyebrow styleOption={opt.id} lead="How We Build" tail="Operating Principles" />
-                <Eyebrow styleOption={opt.id} lead="Flagships & Gatherings" />
-              </div>
-            </div>
-
-            {/* On photo scrim */}
-            <div className="relative overflow-hidden rounded-[var(--radius-md)]">
-              <picture>
-                <source type="image/avif" srcSet={scrimAvif} sizes="400px" />
-                <source type="image/webp" srcSet={scrimWebp} sizes="400px" />
-                <img
-                  src={scrimMeta.src}
-                  width={scrimMeta.width}
-                  height={scrimMeta.height}
-                  alt="Build Hours session"
-                  className="h-44 w-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/75 via-[var(--ink)]/25 to-transparent" aria-hidden="true" />
-              <div className="absolute inset-x-0 bottom-0 p-4">
-                <Eyebrow styleOption={opt.id} tone="dark" dot lead="Sunday Build Session" tail="11:00 AM" />
-              </div>
-              <p className="absolute right-3 top-3 font-mono text-[10px] uppercase tracking-[0.08em] text-white/70">On scrim</p>
-            </div>
-
-            {/* On charcoal */}
-            <div className="rounded-[var(--radius-md)] bg-[var(--ink)] p-5">
-              <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.08em] text-white/50">On charcoal</p>
-              <div className="flex flex-col items-start gap-3">
-                <Eyebrow styleOption={opt.id} tone="dark" dot lead="Visakhapatnam, AP" tail="Weekly Build Circle" />
-                <Eyebrow styleOption={opt.id} tone="dark" lead="Flagships & Gatherings" />
-              </div>
+    <>
+      <KitBlock
+        id="labels"
+        title="Labels — final: B for hero pills, A for everything else"
+        note="The “//” separator and mono-caps-wide-tracking are gone site-wide; words, days and times are untouched. Hero pills use the split pill (lead ink, 16px hairline, tail text-safe ember); captions, section labels, chips and the drawer line use the dot separator (sans medium 13px title case). Pulse dot stays (static under reduced motion); wraps cleanly at 320px."
+      >
+        <KitRow label="Hero pills — option B (all five page heroes)">
+          <Eyebrow variant="pill" dot lead="Visakhapatnam, AP" tail="Weekly Build Circle" />
+          <Eyebrow variant="pill" dot lead="The Origin" tail="Why We Gather" />
+          <Eyebrow variant="pill" dot lead="Get Involved" tail="Pull Up a Chair" />
+        </KitRow>
+        <KitRow label="Section labels + drawer line — option A">
+          <Eyebrow lead="How We Build" tail="Operating Principles" />
+          <Eyebrow lead="Vizag Innovation Hub" tail="Sundays 11:00 AM IST" />
+          <Eyebrow lead="Flagships & Gatherings" />
+        </KitRow>
+        <KitRow label="Media captions — option A on scrim">
+          <div className="relative w-full max-w-xl overflow-hidden rounded-[var(--radius-md)]">
+            <picture>
+              <source type="image/avif" srcSet={scrimAvif} sizes="576px" />
+              <source type="image/webp" srcSet={scrimWebp} sizes="576px" />
+              <img
+                src={scrimMeta.src}
+                width={scrimMeta.width}
+                height={scrimMeta.height}
+                alt="Build Hours session"
+                className="h-40 w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/75 via-[var(--ink)]/25 to-transparent" aria-hidden="true" />
+            <div className="absolute inset-x-0 bottom-0 p-4">
+              <Eyebrow tone="dark" dot lead="Sunday Build Session" tail="11:00 AM" />
             </div>
           </div>
+        </KitRow>
+        <KitRow label="Milestone chip — option A, title case (casing is styling; spelling untouched)">
+          <div className="rounded-[var(--radius-md)] border border-[var(--line-strong)] bg-[var(--cream-soft)] px-4 py-3">
+            <Eyebrow lead="Milestone Achieved" tail="500+ Git Commits across 35 student repos" />
+          </div>
+        </KitRow>
+      </KitBlock>
 
-          {opt.id === 'c' && (
-            <p className="font-mono-alt mt-4 rounded-[var(--radius-md)] border border-[var(--line)] bg-[var(--cream)] p-3 text-xs tracking-[0.04em] text-[var(--ink)]">
-              Glyph check — W M &amp; @ : Weekly Meetups &amp; Workshops @ aegion.dev
-            </p>
-          )}
-        </div>
-      ))}
-
-      {/* 320px wrap behavior */}
-      <div className="mt-2 rounded-[var(--radius-md)] border border-dashed border-[var(--line-strong)] p-5">
-        <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--ink-faint)]">
-          320px wrap — tail drops, divider hides
-        </p>
-        <div className="flex flex-wrap gap-6">
-          {OPTIONS.map((opt) => (
-            <div key={opt.id} className="w-[320px] rounded border border-[var(--line)] bg-[var(--cream)] p-4">
-              <Eyebrow styleOption={opt.id} variant="pill" dot lead="Visakhapatnam, Andhra Pradesh" tail="Weekly Build Circle" />
+      <KitBlock
+        id="numbertag"
+        title="NumberTag — approval needed before migration"
+        note="Replaces “01 // CODE FIRST” and “PHASE // 01”. Number in text-safe ember, label in ink, Option-A typography, no separator. Principle tags stay number-first; cadence cards keep the original word order (Phase 01)."
+      >
+        <KitRow label="Principle tags — number first (Home bento)">
+          <div className="flex flex-wrap gap-3">
+            <div className="rounded-full border border-[var(--line)] bg-[var(--cream-soft)] px-3 py-1">
+              <NumberTag num="01" label="Code First" />
             </div>
-          ))}
-        </div>
-      </div>
-    </KitBlock>
+            <div className="rounded-full border border-[var(--line)] bg-[var(--cream-soft)] px-3 py-1">
+              <NumberTag num="02" label="No Gatekeeping" />
+            </div>
+            <div className="rounded-full border border-[var(--line)] bg-[var(--cream-soft)] px-3 py-1">
+              <NumberTag num="03" label="Full Spectrum" />
+            </div>
+            <div className="rounded-full border border-[var(--line)] bg-[var(--cream-soft)] px-3 py-1">
+              <NumberTag num="04" label="Acceleration" />
+            </div>
+          </div>
+        </KitRow>
+        <KitRow label="Cadence cards — original word order (About)">
+          <div className="flex flex-wrap gap-3">
+            <NumberTag order="label-first" label="Phase" num="01" />
+            <NumberTag order="label-first" label="Phase" num="02" />
+            <NumberTag order="label-first" label="Phase" num="03" />
+            <NumberTag order="label-first" label="Phase" num="04" />
+          </div>
+        </KitRow>
+        <KitRow label="In context — bento card chrome + cadence card chrome">
+          <div className="w-64 rounded-[var(--radius-lg)] border border-[var(--line)] bg-[var(--surface)] p-5 shadow-sm">
+            <div className="mb-3 flex items-center justify-between">
+              <span className="inline-flex size-10 items-center justify-center rounded-xl bg-[var(--ember-soft)] text-[var(--ember-deep)]">
+                ⌘
+              </span>
+              <NumberTag num="01" label="Code First" />
+            </div>
+            <p className="font-display text-base font-bold">Shipping Over Speaking</p>
+            <p className="mt-1 text-xs text-[var(--ink-soft)]">Bento card chrome preview.</p>
+          </div>
+          <div className="w-64 rounded-[var(--radius-lg)] border border-[var(--line)] bg-[var(--surface)] p-5 shadow-sm">
+            <div className="mb-3 flex items-center justify-between">
+              <NumberTag order="label-first" label="Phase" num="01" />
+              <span className="rounded-md bg-[var(--cream-soft)] px-2 py-0.5 font-sans text-[11px] font-medium text-[var(--ink-faint)]">
+                11:00 AM
+              </span>
+            </div>
+            <p className="font-display text-base font-bold">Prompt &amp; Match</p>
+            <p className="mt-1 text-xs text-[var(--ink-soft)]">Cadence card chrome preview.</p>
+          </div>
+        </KitRow>
+      </KitBlock>
+    </>
   );
 }
 

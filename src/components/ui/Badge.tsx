@@ -1,7 +1,7 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/utils';
-import { LABEL_STYLE, LABEL_STYLES } from '../brand/label-style';
+import { LABEL_STYLE_TEXT, LABEL_STYLES } from '../brand/label-style';
 
 /**
  * A7 — Badge. Typography follows the site-wide LABEL_STYLE switch
@@ -37,7 +37,7 @@ export function Badge({ className, variant, size, dot = false, children, ...prop
     <span
       className={cn(
         badgeVariants({ variant, size }),
-        LABEL_STYLES[LABEL_STYLE].text,
+        LABEL_STYLES[LABEL_STYLE_TEXT].text,
         size === 'sm' && 'text-[11px]',
         className
       )}

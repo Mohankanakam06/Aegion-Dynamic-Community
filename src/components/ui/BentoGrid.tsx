@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
+import { NumberTag } from '../brand/NumberTag';
 
 export interface BentoGridProps {
   children: ReactNode;
@@ -29,7 +30,8 @@ export interface BentoCardProps {
   description: string;
   href?: string;
   cta?: string;
-  tag?: string;
+  tagNum?: string;
+  tagLabel?: string;
   onClick?: () => void;
 }
 
@@ -41,7 +43,8 @@ export const BentoCard: React.FC<BentoCardProps> = ({
   description,
   href,
   cta = 'Explore',
-  tag,
+  tagNum,
+  tagLabel,
   onClick,
 }) => {
   const isInteractive = Boolean(href || onClick);
@@ -60,9 +63,9 @@ export const BentoCard: React.FC<BentoCardProps> = ({
         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--cream)] border border-[var(--line-strong)] text-[var(--ember)] transition-transform duration-300 group-hover:scale-105 shadow-xs">
           <Icon className="h-5 w-5" aria-hidden="true" />
         </div>
-        {tag && (
-          <span className="font-mono text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-[var(--cream-soft)] border border-[var(--line)] text-[var(--ink-soft)]">
-            {tag}
+        {tagNum && tagLabel && (
+          <span className="px-3 py-1 rounded-full bg-[var(--cream-soft)] border border-[var(--line)]">
+            <NumberTag num={tagNum} label={tagLabel} />
           </span>
         )}
       </div>

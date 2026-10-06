@@ -1,12 +1,13 @@
 import React from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '../../lib/utils';
-import { LABEL_STYLE, LABEL_STYLES, type LabelStyleId } from './label-style';
+import { LABEL_STYLE_PILL, LABEL_STYLE_TEXT, LABEL_STYLES } from './label-style';
 
 /**
  * A2 — Eyebrow (v2). Takes the label as separate `lead` + `tail` props and
  * renders the separator itself — UI strings never contain "//" again.
- * Style comes from the single LABEL_STYLE switch (label-style.ts).
+ * Style comes from the LABEL_STYLE switches (label-style.ts): pills use the
+ * split-pill style (B), everything else the dot separator (A).
  * Dot pulses softly (2.4s; static under reduced motion). Wraps cleanly at
  * 320px: the tail may drop to a second line and the divider hides there.
  * Never use for emails, handles or sentences.
@@ -19,8 +20,6 @@ export interface EyebrowProps extends React.HTMLAttributes<HTMLSpanElement> {
   tone?: 'light' | 'dark';
   dot?: boolean;
   icon?: LucideIcon;
-  /** Kit-only: forces one of the three candidate styles for comparison. */
-  styleOption?: LabelStyleId;
 }
 
 function LabelSeparator({
@@ -56,11 +55,10 @@ export function Eyebrow({
   tone = 'light',
   dot = false,
   icon: Icon,
-  styleOption,
   className,
   ...props
 }: EyebrowProps) {
-  const cfg = LABEL_STYLES[styleOption ?? LABEL_STYLE];
+  const cfg = LABEL_STYLES[variant === 'pill' ? LABEL_STYLE_PILL : LABEL_STYLE_TEXT];
   const leadTone = tone === 'dark' ? 'text-[var(--cream)]' : 'text-[var(--ink)]';
   const tailTone = cfg.twoTone
     ? tone === 'dark'

@@ -1,5 +1,6 @@
 import { MessageSquare, Quote, Building2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Eyebrow } from '../components/brand/Eyebrow';
 import { NumberTicker } from '../components/ui/NumberTicker';
 import { Marquee } from '../components/ui/Marquee';
 import { testimonials, communityMetrics } from '../data/testimonials';
@@ -10,12 +11,7 @@ export function Stories() {
     <div className="pt-24 sm:pt-28 pb-20 overflow-hidden">
       {/* HERO */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--amber-soft)] border border-[var(--amber-border)] shadow-xs mb-6">
-          <MessageSquare className="w-3.5 h-3.5 text-[var(--ember)]" aria-hidden="true" />
-          <span className="font-mono text-[11px] font-bold tracking-widest text-[var(--ember-deep)] uppercase">
-            Dispatches // Notes from the Floor
-          </span>
-        </div>
+        <Eyebrow variant="pill" icon={MessageSquare} lead="Dispatches" tail="Notes from the Floor" className="mb-6" />
 
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[var(--ink)] mb-4">
           Voices of the <span className="text-[var(--ember)]">Movement</span>
@@ -121,9 +117,7 @@ export function Stories() {
             className="w-full h-96 sm:h-[450px] object-cover transition-transform duration-700 group-hover:scale-102"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[var(--ink)]/50 to-transparent flex flex-col justify-end p-8 sm:p-12 text-white">
-            <span className="font-mono text-xs uppercase tracking-widest text-[var(--amber)] font-semibold mb-2">
-              Collective Spirit // Vizag Chapters
-            </span>
+            <Eyebrow tone="dark" lead="Collective Spirit" tail="Vizag Chapters" className="mb-2" />
             <h2 className="font-display text-2xl sm:text-4xl font-extrabold max-w-2xl mb-4 leading-snug">
               "Here, the distance between having an idea and shipping it is measured in hours, not semesters."
             </h2>

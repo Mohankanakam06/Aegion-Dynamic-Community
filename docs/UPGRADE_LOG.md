@@ -36,6 +36,13 @@
 - axe on /__kit scoped to `main`: 0 serious/critical. Two KNOWN violations live in the legacy chrome (Header CTA white-on-ember 3.49:1; footer white/40 label 3.9:1) — fixed at Gates C1/C2.
 - Existing pages now get real Reveal via the shim (`ui/Reveal.tsx` → `motion/Reveal.tsx`); pages migrate fully during assembly gates, shim deleted then.
 
+## Label Style Migration (2026-10-06, commit `replace // label style`)
+- **Final styles:** hero pills → B (split pill: lead ink, 16px hairline, tail ember-deep / ember-light on dark); everything else → A (dot separator, sans medium 13px, title case). Option C rejected; JetBrains Mono removed.
+- **NumberTag:** number ember-deep + label ink, no separator. Principles number-first (`01 Code First`); cadence keeps word order (`Phase 01`).
+- **Migrated (18 live sites + test fixture):** Home hero pill/caption/bento eyebrow/4 bento tags (BentoCard now takes `tagNum`/`tagLabel`), header drawer line, About pill/milestone chip/4 phase tags/photo caption, Stories pill/caption, Events pill, Contact pill. Dead-code files (`works-wheel`, `YearInEvents`) skipped — removed in their gates.
+- **Schedule FINAL: Sunday, 11:00 AM IST.** Repo sweep confirmed zero remaining "Saturday"/"4:00 PM" outside `docs/UPGRADE_LOG.md` (history) and `docs/baseline/` (frozen).
+- **Still on old label style by design (migrate with their gates):** other section eyebrows ("Community Voices", "Our Bedrock", "Origins & Vision", "The Architecture of a Build", "Flagships & Gatherings" plain span, stat labels, footer labels, modal/gallery labels, marquee). Each becomes `Eyebrow` when its section assembles in Gates C–F.
+
 ## Completed Steps
 - **Step 0 — Safety Check & Dark Theme Revert:**
   - Verified clean working tree on `redesign`.

@@ -9,6 +9,7 @@ import { MotionBlocks } from '../kit/blocks-motion';
 
 const INDEX = [
   { id: 'labels', label: '⚑ Labels' },
+  { id: 'numbertag', label: '⚑ NumberTag' },
   { id: 'container', label: 'Container' },
   { id: 'eyebrow', label: 'Eyebrow' },
   { id: 'accent', label: 'Accent' },

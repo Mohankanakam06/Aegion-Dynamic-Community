@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import logoNav from '../../assets/images/logo.svg';
 import GooeyNav from '../ui/GooeyNav';
+import { Eyebrow } from '../brand/Eyebrow';
 
 interface NavItem {
   name: string;
@@ -173,9 +174,9 @@ export function Header() {
                     <span>Join Sunday Sprint</span>
                     <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                  <p className="font-mono text-[11px] text-[var(--ink-soft)] text-center mt-3">
-                    Vizag Innovation Hub // Sundays 11:00 AM IST
-                  </p>
+                  <div className="mt-3 flex justify-center">
+                    <Eyebrow lead="Vizag Innovation Hub" tail="Sundays 11:00 AM IST" />
+                  </div>
                 </div>
               </nav>
             </div>

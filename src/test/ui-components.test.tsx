@@ -42,14 +42,16 @@ describe('Modern UI Components Suite', () => {
         <BentoCard
           name="Shipping Over Speaking"
           Icon={Terminal}
-          tag="01 // CODE"
+          tagNum="01"
+          tagLabel="Code First"
           description="Live code over slides"
           cta="Explore"
         />
       </BentoGrid>
     );
     expect(screen.getByText('Shipping Over Speaking')).toBeDefined();
-    expect(screen.getByText('01 // CODE')).toBeDefined();
+    expect(screen.getByText('01')).toBeDefined();
+    expect(screen.getByText('Code First')).toBeDefined();
     expect(screen.getByText('Live code over slides')).toBeDefined();
   });
 

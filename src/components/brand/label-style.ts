@@ -1,14 +1,13 @@
 /**
- * LABEL STYLE — single switch for every "//"-style label on the site
- * (Eyebrow A2, Badge A7, media caption labels). Change request 2026-10-06:
- * the words stay exactly as they are; only the separator and label styling change.
- *
- * The user picks A | B | C from /__kit#labels. After the pick, this constant is
- * final and the styleOption demo prop is removed from the kit.
+ * LABEL STYLE — final (user decision 2026-10-06):
+ * hero eyebrow pills → B (split pill); everything else → A (dot separator).
+ * Eyebrow picks by variant; Badge and media caption labels use TEXT.
+ * Option C (mono) was rejected — JetBrains Mono is removed.
  */
-export type LabelStyleId = 'a' | 'b' | 'c';
+export type LabelStyleId = 'a' | 'b';
 
-export const LABEL_STYLE: LabelStyleId = 'a'; // ← user decision pending
+export const LABEL_STYLE_PILL: LabelStyleId = 'b';
+export const LABEL_STYLE_TEXT: LabelStyleId = 'a';
 
 export interface LabelStyleConfig {
   /** Text classes shared by lead and tail (font, size, weight, tracking, case). */
@@ -16,7 +15,7 @@ export interface LabelStyleConfig {
   /** Option B renders the tail in ember (deep on light surfaces, light on dark). */
   twoTone: boolean;
   /** Separator rendered by the component between lead and tail. */
-  separator: 'middot' | 'divider' | 'hairline';
+  separator: 'middot' | 'divider';
 }
 
 export const LABEL_STYLES: Record<LabelStyleId, LabelStyleConfig> = {
@@ -31,11 +30,5 @@ export const LABEL_STYLES: Record<LabelStyleId, LabelStyleConfig> = {
     text: 'font-sans text-[13px] font-semibold tracking-[0.01em]',
     twoTone: true,
     separator: 'divider',
-  },
-  /** C — Mono refined: JetBrains Mono, 12px, +0.04em, thin vertical divider. */
-  c: {
-    text: 'font-mono-alt text-xs font-medium tracking-[0.04em]',
-    twoTone: false,
-    separator: 'hairline',
   },
 };

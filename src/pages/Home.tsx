@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Reveal } from '../components/ui/Reveal';
+import { Eyebrow } from '../components/brand/Eyebrow';
 import { Modal } from '../components/ui/Modal';
 import { Lightbox } from '../components/ui/Lightbox';
 import { AuroraBackground } from '../components/ui/AuroraBackground';
@@ -65,12 +66,7 @@ export function Home() {
             <div className="lg:col-span-7 space-y-6">
               {/* Location & Status Kicker */}
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--amber-soft)] border border-[var(--amber-border)] shadow-xs">
-                  <span className="w-2 h-2 rounded-full bg-[var(--ember)] animate-pulse" aria-hidden="true" />
-                  <span className="font-mono text-[11px] font-bold tracking-widest text-[var(--ember-deep)] uppercase">
-                    Visakhapatnam, AP // Weekly Build Circle
-                  </span>
-                </div>
+                <Eyebrow variant="pill" dot lead="Visakhapatnam, AP" tail="Weekly Build Circle" />
               </div>
 
               {/* Main Headline */}
@@ -150,9 +146,7 @@ export function Home() {
                     className="w-full h-72 sm:h-84 object-cover rounded-2xl transition-transform duration-500 group-hover:scale-103"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/90 via-[var(--ink)]/25 to-transparent flex flex-col justify-end p-6 text-white">
-                    <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--amber)] font-semibold mb-1">
-                      Sunday Build Session // 11:00 AM
-                    </span>
+                    <Eyebrow tone="dark" lead="Sunday Build Session" tail="11:00 AM" className="mb-1" />
                     <h3 className="font-display text-lg font-bold leading-snug">
                       Distraction-Free Collaborative Flow
                     </h3>
@@ -231,10 +225,7 @@ export function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="max-w-2xl mb-10">
           <Reveal>
-            <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[var(--ember-deep)] font-semibold mb-2">
-              <Terminal className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>How We Build // Operating Principles</span>
-            </div>
+            <Eyebrow icon={Terminal} lead="How We Build" tail="Operating Principles" className="mb-2" />
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--ink)] leading-tight">
               Built on <span className="text-[var(--ember)]">Proof of Work</span>
             </h2>
@@ -249,7 +240,8 @@ export function Home() {
             name="Shipping Over Speaking"
             className="md:col-span-2"
             Icon={Terminal}
-            tag="01 // CODE FIRST"
+            tagNum="01"
+            tagLabel="Code First"
             description="We replace speculative presentations with active terminal sessions and live deployments. Real code running in production is the only true currency of a craftsperson."
             cta="Explore Sunday Build Hours"
             href="/events"
@@ -258,7 +250,8 @@ export function Home() {
             name="Radical Peer Access"
             className="md:col-span-1"
             Icon={Users}
-            tag="02 // NO GATEKEEPING"
+            tagNum="02"
+            tagLabel="No Gatekeeping"
             description="Break down institutional walls. First-year novices pair directly with senior engineers in an ego-free circle."
             cta="Meet Our Mentors"
             href="/about"
@@ -267,7 +260,8 @@ export function Home() {
             name="Cross-Stack Curiosity"
             className="md:col-span-1"
             Icon={Cpu}
-            tag="03 // FULL SPECTRUM"
+            tagNum="03"
+            tagLabel="Full Spectrum"
             description="Microcontrollers, sensor meshes, distributed web architectures, AI agents, and custom compilers."
             cta="View Tech Labs"
             href="/events"
@@ -276,7 +270,8 @@ export function Home() {
             name="High-Intensity Hackathons & Proxima"
             className="md:col-span-2"
             Icon={Flame}
-            tag="04 // ACCELERATION"
+            tagNum="04"
+            tagLabel="Acceleration"
             description="36-hour sprints with hardware labs, cloud compute grants, and venture prototyping right on the Vizag coast."
             cta="Discover Hackathon Proxima"
             href="/events"

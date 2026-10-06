@@ -12,6 +12,8 @@ import {
   Calendar,
 } from 'lucide-react';
 import { Timeline } from '../components/ui/Timeline';
+import { Eyebrow } from '../components/brand/Eyebrow';
+import { NumberTag } from '../components/brand/NumberTag';
 import communityFeature from '../assets/images/community-feature.jpg';
 import buildPhoto1 from '../assets/images/build-hours/1.jpg';
 import buildPhoto3 from '../assets/images/build-hours/3.jpg';
@@ -108,9 +110,7 @@ export function About() {
             <strong className="font-semibold text-[var(--ember-deep)]">Weekly Sunday Build Cadence:</strong> Transitioned from informal meetups to structured, open-door Sunday build circles at the Vizag Innovation Hub. Weekly attendance surpassed 40 active builders pushing real production repositories.
           </p>
           <div className="p-4 rounded-xl bg-[var(--cream-soft)] border border-[var(--line-strong)] mb-4">
-            <span className="font-mono text-xs text-[var(--ink-soft)] block font-semibold">
-              MILESTONE ACHIEVED // 500+ Git Commits across 35 student repos
-            </span>
+            <Eyebrow lead="Milestone Achieved" tail="500+ Git Commits across 35 student repos" />
           </div>
         </div>
       ),
@@ -168,12 +168,7 @@ export function About() {
     <div className="pt-24 sm:pt-28 pb-20 overflow-hidden">
       {/* MANIFESTO HERO */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 sm:mb-20">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--amber-soft)] border border-[var(--amber-border)] shadow-xs mb-6">
-          <Compass className="w-3.5 h-3.5 text-[var(--ember)]" aria-hidden="true" />
-          <span className="font-mono text-[11px] font-bold tracking-widest text-[var(--ember-deep)] uppercase">
-            The Origin // Why We Gather
-          </span>
-        </div>
+        <Eyebrow variant="pill" icon={Compass} lead="The Origin" tail="Why We Gather" className="mb-6" />
 
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[var(--ink)] mb-6 sm:mb-8 leading-tight">
           Why Aegion <span className="text-[var(--ember)]">Exists</span>
@@ -240,9 +235,7 @@ export function About() {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold text-[var(--ember)]">
-                    PHASE // {item.step}
-                  </span>
+                  <NumberTag order="label-first" label="Phase" num={item.step} />
                   <span className="font-mono text-[11px] text-[var(--ink-faint)] bg-[var(--cream-soft)] px-2 py-0.5 rounded-md">
                     {item.time}
                   </span>
@@ -271,9 +264,7 @@ export function About() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[var(--ink)]/40 to-transparent flex items-end p-8 sm:p-12 text-white">
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-[var(--amber)] block mb-2 font-semibold">
-                COMMUNITY GATHERING // VIZAG
-              </span>
+              <Eyebrow tone="dark" lead="Community Gathering" tail="Vizag" className="mb-2" />
               <p className="font-display text-xl sm:text-3xl font-extrabold max-w-2xl leading-snug">
                 Building together across institutions, disciplines, and backgrounds.
               </p>
