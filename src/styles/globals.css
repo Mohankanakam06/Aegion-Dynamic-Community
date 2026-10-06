@@ -520,6 +520,12 @@
   outline-offset: 2px;
 }
 
+/* Label style option C — refined mono (loaded in index.html; if option C is not
+   picked, the font link and this class are removed again) */
+.font-mono-alt {
+  font-family: 'JetBrains Mono', var(--font-mono);
+}
+
 /* A2 — Eyebrow pulsing dot (2.4s; static under reduced motion) */
 @keyframes pulse-soft {
   0%, 100% { opacity: 1; transform: scale(1); }

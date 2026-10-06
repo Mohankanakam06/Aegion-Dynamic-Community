@@ -45,21 +45,17 @@ export function FoundationBlocks() {
       <KitBlock
         id="eyebrow"
         title="A2 — Eyebrow"
-        note="Mono caps 12px, +0.08em tracking, text-safe ember. Dot pulses softly (2.4s; static under reduced motion). Never used for emails, handles or sentences."
+        note="lead + tail props; the component renders the separator (style set by the LABEL_STYLE switch — see the Labels block). Dot pulses softly (2.4s; static under reduced motion). Wraps cleanly at 320px. Never used for emails, handles or sentences."
       >
         <KitRow label="Pill + pulsing dot">
-          <Eyebrow variant="pill" dot>
-            Visakhapatnam, AP // Weekly Build Circle
-          </Eyebrow>
+          <Eyebrow variant="pill" dot lead="Visakhapatnam, AP" tail="Weekly Build Circle" />
         </KitRow>
         <KitRow label="Pill + icon">
-          <Eyebrow variant="pill" icon={Compass}>
-            The Origin // Why We Gather
-          </Eyebrow>
+          <Eyebrow variant="pill" icon={Compass} lead="The Origin" tail="Why We Gather" />
         </KitRow>
         <KitRow label="Plain / plain + icon">
-          <Eyebrow>Flagships & Gatherings</Eyebrow>
-          <Eyebrow icon={Terminal}>How We Build // Operating Principles</Eyebrow>
+          <Eyebrow lead="Flagships & Gatherings" />
+          <Eyebrow icon={Terminal} lead="How We Build" tail="Operating Principles" />
         </KitRow>
       </KitBlock>
 
@@ -101,7 +97,8 @@ export function FoundationBlocks() {
           <div className="border-t border-[var(--line)] pt-10">
             <SectionHeader
               align="center"
-              eyebrow="The Origin // Why We Gather"
+              eyebrow="The Origin"
+              eyebrowTail="Why We Gather"
               eyebrowIcon={Compass}
               title={
                 <>

@@ -11,6 +11,7 @@ import { Link } from '../ui/Link';
  */
 export interface SectionHeaderProps {
   eyebrow?: string;
+  eyebrowTail?: string;
   eyebrowIcon?: LucideIcon;
   eyebrowDot?: boolean;
   eyebrowVariant?: 'pill' | 'plain';
@@ -24,6 +25,7 @@ export interface SectionHeaderProps {
 
 export function SectionHeader({
   eyebrow,
+  eyebrowTail,
   eyebrowIcon,
   eyebrowDot,
   eyebrowVariant,
@@ -41,10 +43,10 @@ export function SectionHeader({
           variant={eyebrowVariant ?? (align === 'center' ? 'pill' : 'plain')}
           icon={eyebrowIcon}
           dot={eyebrowDot}
+          lead={eyebrow}
+          tail={eyebrowTail}
           className="mb-3"
-        >
-          {eyebrow}
-        </Eyebrow>
+        />
       )}
       <Heading className="text-balance">{title}</Heading>
       {lead && (

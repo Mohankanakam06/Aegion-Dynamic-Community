@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { Container } from '../components/layout/Container';
 import { Badge } from '../components/ui/Badge';
+import { LabelBlocks } from '../kit/blocks-labels';
 import { FoundationBlocks } from '../kit/blocks-foundations';
 import { ButtonBlocks } from '../kit/blocks-buttons';
 import { CardBlocks } from '../kit/blocks-cards';
 import { MotionBlocks } from '../kit/blocks-motion';
 
 const INDEX = [
+  { id: 'labels', label: '⚑ Labels' },
   { id: 'container', label: 'Container' },
   { id: 'eyebrow', label: 'Eyebrow' },
   { id: 'accent', label: 'Accent' },
@@ -66,6 +68,7 @@ export default function KitPage() {
       </div>
 
       <Container measure="wide" className="mt-10 space-y-10">
+        <LabelBlocks />
         <FoundationBlocks />
         <ButtonBlocks />
         <CardBlocks />
