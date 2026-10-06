@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#FFFBF6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F0D0B" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate icon" href="/logo.svg" />
+
+    <!-- Primary Meta Tags -->
+    <title>Aegion Dynamic Community — Connect. Build. Grow.</title>
+    <meta name="title" content="Aegion Dynamic Community — Connect. Build. Grow." />
+    <meta name="description" content="Open ecosystem for curious minds, student builders, creators, and technologists in Vizag. Weekly build hours, peer code review, and prototype sprints." />
+    <meta name="keywords" content="Aegion, Vizag tech community, student builders, hackathons, engineering, Andhra Pradesh, open source" />
+    <meta name="author" content="Aegion Dynamic Community" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aegion.dev/" />
+    <meta property="og:site_name" content="Aegion Dynamic Community" />
+    <meta property="og:title" content="Aegion Dynamic Community — Connect. Build. Grow." />
+    <meta property="og:description" content="Open ecosystem for curious minds, student builders, creators, and technologists in Vizag. Weekly build hours and prototype sprints." />
+    <meta property="og:image" content="/community-feature.jpg" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://aegion.dev/" />
+    <meta name="twitter:title" content="Aegion Dynamic Community — Connect. Build. Grow." />
+    <meta name="twitter:description" content="Open ecosystem for curious minds, student builders, creators, and technologists in Vizag." />
+    <meta name="twitter:image" content="/community-feature.jpg" />
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Theme Initialization Script to avoid FOUC -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('aegion_theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
