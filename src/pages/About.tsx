@@ -49,25 +49,25 @@ export function About() {
   const buildCycle = [
     {
       step: '01',
-      time: '4:00 PM',
+      time: '11:00 AM',
       title: 'Prompt & Match',
-      desc: 'Builders arrive on Sunday at 4 PM IST, share what they are working on, and pair up across college and skill boundaries.',
+      desc: 'Builders arrive on Sunday at 11 AM IST, share what they are working on, and pair up across college and skill boundaries.',
     },
     {
       step: '02',
-      time: '4:30 PM',
+      time: '11:30 AM',
       title: 'Deep Focus Sprint',
       desc: 'Three uninterrupted hours of deep-work coding, architecture design, debugging sessions, and hardware prototyping.',
     },
     {
       step: '03',
-      time: '7:30 PM',
+      time: '2:30 PM',
       title: 'Ship & Commit',
       desc: 'Every session targets pushing a commit, opening a pull request, or spinning up a live URL. No theoretical presentations.',
     },
     {
       step: '04',
-      time: '7:45 PM',
+      time: '2:45 PM',
       title: 'Lightning Demos',
       desc: '3-minute unfiltered demos with peer code review, constructive critique, and collaborative troubleshooting.',
     },
@@ -228,7 +228,7 @@ export function About() {
             How the <span className="text-[var(--ember)]">Cadence</span> Works
           </h2>
           <p className="text-[var(--ink-soft)] text-sm sm:text-base mt-2">
-            Every Sunday from 4:00 PM to 8:15 PM IST.
+            Every Sunday from 11:00 AM to 3:15 PM IST.
           </p>
         </div>
 

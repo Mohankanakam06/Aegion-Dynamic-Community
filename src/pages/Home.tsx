@@ -115,7 +115,7 @@ export function Home() {
               <div className="pt-4 border-t border-[var(--line)] flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[var(--ink-soft)] font-mono">
                 <div className="flex items-center gap-2">
                   <Clock className="w-3.5 h-3.5 text-[var(--ember)] shrink-0" aria-hidden="true" />
-                  <span>Sundays 4:00 PM IST</span>
+                  <span>Sundays 11:00 AM IST</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-[var(--ember)] shrink-0" aria-hidden="true" />
@@ -151,7 +151,7 @@ export function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/90 via-[var(--ink)]/25 to-transparent flex flex-col justify-end p-6 text-white">
                     <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--amber)] font-semibold mb-1">
-                      Sunday Build Session // 04:00 PM
+                      Sunday Build Session // 11:00 AM
                     </span>
                     <h3 className="font-display text-lg font-bold leading-snug">
                       Distraction-Free Collaborative Flow

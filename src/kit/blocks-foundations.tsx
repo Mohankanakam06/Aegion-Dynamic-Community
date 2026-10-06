@@ -108,7 +108,7 @@ export function FoundationBlocks() {
                   How the <Accent>Cadence</Accent> Works
                 </>
               }
-              lead="Every Sunday from 4:00 PM to 8:15 PM IST."
+              lead="Every Sunday from 11:00 AM to 3:15 PM IST."
             />
           </div>
         </div>

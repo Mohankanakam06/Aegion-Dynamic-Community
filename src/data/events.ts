@@ -39,7 +39,7 @@ export const events: EventItem[] = [
     tag: 'Weekly Cohort',
     category: 'build',
     date: 'Every Sunday',
-    time: '4:00 PM - 8:00 PM IST',
+    time: '11:00 AM - 3:00 PM IST',
     location: 'Vizag Innovation Hub & Hybrid Discord',
     attendees: '40+ Builders / Session',
     summary: 'Focused, distraction-free co-working & shipping sessions for passionate student technologists.',

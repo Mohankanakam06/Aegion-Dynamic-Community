@@ -119,7 +119,7 @@ export function Footer() {
             </p>
             <div className="pt-4 border-t border-white/10">
               <span className="font-mono text-[11px] text-white/40 block mb-1 uppercase tracking-wider">Weekly Sprint Cadence</span>
-              <span className="text-xs text-[var(--amber)] font-medium bg-white/5 px-2 py-1.5 rounded-md inline-block">Sundays, 4:00 PM IST</span>
+              <span className="text-xs text-[var(--amber)] font-medium bg-white/5 px-2 py-1.5 rounded-md inline-block">Sundays, 11:00 AM IST</span>
             </div>
           </div>
         </div>

@@ -110,8 +110,8 @@ export function Contact() {
       'DESCRIPTION:Weekly collaborative build sprint with student engineers in Vizag. Real code, PRs, and demo circles.',
       'LOCATION:Vizag Innovation Hub & Discord, Visakhapatnam, AP',
       'RRULE:FREQ=WEEKLY;BYDAY=SU',
-      'DTSTART:20261011T103000Z',
-      'DTEND:20261011T143000Z',
+      'DTSTART:20261011T053000Z',
+      'DTEND:20261011T093000Z',
       'END:VEVENT',
       'END:VCALENDAR',
     ].join('\r\n');
@@ -263,7 +263,7 @@ export function Contact() {
                 <div>
                   <h4 className="font-bold text-sm text-[var(--ink)]">Weekly Sprint Cadence</h4>
                   <p className="text-xs text-[var(--ink-soft)] leading-relaxed">
-                    Every Sunday from 4:00 PM to 8:15 PM IST.
+                    Every Sunday from 11:00 AM to 3:15 PM IST.
                   </p>
                 </div>
               </div>

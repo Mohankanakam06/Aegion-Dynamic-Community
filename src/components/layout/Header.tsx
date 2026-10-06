@@ -174,7 +174,7 @@ export function Header() {
                     <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <p className="font-mono text-[11px] text-[var(--ink-soft)] text-center mt-3">
-                    Vizag Innovation Hub // Sundays 4:00 PM IST
+                    Vizag Innovation Hub // Sundays 11:00 AM IST
                   </p>
                 </div>
               </nav>
