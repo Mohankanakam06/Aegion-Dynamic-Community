@@ -51,7 +51,7 @@ export function App() {
   return (
     <MotionConfig reducedMotion="user">
       <LazyMotion features={motionFeatures}>
-        <div className="min-h-screen flex flex-col bg-[var(--cream)] text-[var(--ink)] antialiased font-sans selection:bg-[var(--amber)] selection:text-[var(--ink)]">
+        <div className="min-h-svh flex flex-col bg-[var(--cream)] text-[var(--ink)] antialiased font-sans selection:bg-[var(--amber)] selection:text-[var(--ink)]">
           <ScrollToTop />
           <Header />
           <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">

@@ -10,7 +10,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[var(--ink)] text-white relative flex-shrink-0 border-t border-[var(--ink-card-subtle)] overflow-hidden">
+    <footer className="bg-[var(--ink)] text-white relative flex-shrink-0 border-t border-[var(--ink-card-subtle)] overflow-hidden pb-safe">
       {/* Subtle Warm Highlight Line */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--ember)] to-transparent opacity-40" />
 

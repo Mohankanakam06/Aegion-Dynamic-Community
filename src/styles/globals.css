@@ -133,12 +133,24 @@
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+    height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     color-scheme: light;
     /* Scroll-lock (Dialog/Sheet) without layout shift */
     scrollbar-gutter: stable;
+    /* Anchors never land under the condensed sticky header (64px + 16px gap) */
+    scroll-padding-top: 5rem;
+    /* Keep our sizing honored; browser/user zoom still works (rem-based) */
+    -webkit-text-size-adjust: 100%;
+    /* Grey flash replaced by real pressed states on controls */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Kill the 300ms tap delay on controls (pan + pinch zoom preserved) */
+  a, button, [role='button'], input, select, textarea, summary {
+    touch-action: manipulation;
   }
 
   body {
@@ -147,7 +159,9 @@
     background-color: var(--cream);
     line-height: 1.65;
     overflow-x: hidden;
-    min-height: 100vh;
+    min-height: 100svh;
+    /* NOTE: no overscroll-behavior-y here on purpose — Android pull-to-refresh
+       stays available; overlays contain their own scroll instead. */
   }
 
   ::selection {
@@ -520,6 +534,26 @@
 @utility focus-ring-cream {
   outline: 2px solid var(--focus-ring-on-dark);
   outline-offset: 2px;
+}
+
+/* M1 — Safe-area utilities (notch / home-indicator padding) */
+@utility pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+@utility pl-safe {
+  padding-left: env(safe-area-inset-left);
+}
+@utility pr-safe {
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Overlays contain their scroll (no chaining into the page behind) */
+.dialog-content,
+.sheet-content {
+  overscroll-behavior-y: contain;
 }
 
 /* B2 — Browser autofill: keep the cream/ink treatment (kills the yellow/blue default) */

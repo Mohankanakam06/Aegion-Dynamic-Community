@@ -55,8 +55,8 @@ export const DialogContent = React.forwardRef<
         'dialog-content fixed z-50 flex max-h-[85dvh] flex-col overflow-y-auto border border-[var(--line-strong)] bg-[var(--surface)] shadow-2xl',
         // ≥640px: centered dialog (reset the bottom-sheet offsets)
         'sm:bottom-auto sm:right-auto sm:left-1/2 sm:top-1/2 sm:w-full sm:max-w-lg sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-[var(--radius-xl)] sm:border-b sm:p-8',
-        // <640px: bottom sheet
-        'inset-x-0 bottom-0 rounded-t-[var(--radius-xl)] border-b-0 p-6 pb-8',
+        // <640px: bottom sheet (safe-area-aware bottom padding for the home bar)
+        'inset-x-0 bottom-0 rounded-t-[var(--radius-xl)] border-b-0 p-6 pb-[max(2rem,env(safe-area-inset-bottom))]',
         className
       )}
       {...props}

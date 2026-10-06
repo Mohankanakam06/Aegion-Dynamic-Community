@@ -1,0 +1,964 @@
+{
+  "routes": {
+    "home@320": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "View All Events & Sprints — 204x16",
+        "Full Dossier & Photos — 110x32",
+        "Full Dossier & Photos — 105x32",
+        "Full Dossier & Photos — 105x32",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 9,
+      "ctaViewports": 0,
+      "docHeightVh": 26.3,
+      "consoleErrors": []
+    },
+    "about@320": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 27.3,
+      "consoleErrors": []
+    },
+    "events@320": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "All Gatherings — 143x36",
+        "Build Sprints — 137x38",
+        "Showcases & Hackathons — 204x38",
+        "Meetups & Systems — 167x38",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 5,
+      "ctaViewports": 0,
+      "docHeightVh": 12.4,
+      "consoleErrors": []
+    },
+    "stories@320": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 15.7,
+      "consoleErrors": []
+    },
+    "contact@320": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [
+        "e.g. Maya Shenoy — 14px",
+        "e.g. maya@gitam.edu — 14px",
+        "Tell us what you are building or what brings you to Aegion... — 14px"
+      ],
+      "imagesMissingDims": 2,
+      "ctaViewports": 0,
+      "docHeightVh": 9,
+      "consoleErrors": []
+    },
+    "home@360": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "View All Events & Sprints — 204x16",
+        "Full Dossier & Photos — 128x32",
+        "Full Dossier & Photos — 122x32",
+        "Full Dossier & Photos — 122x32",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 9,
+      "ctaViewports": 0,
+      "docHeightVh": 22.6,
+      "consoleErrors": []
+    },
+    "about@360": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 22.6,
+      "consoleErrors": []
+    },
+    "events@360": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "All Gatherings — 143x36",
+        "Build Sprints — 137x38",
+        "Showcases & Hackathons — 204x38",
+        "Meetups & Systems — 167x38",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 5,
+      "ctaViewports": 0,
+      "docHeightVh": 10.6,
+      "consoleErrors": []
+    },
+    "stories@360": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 13.3,
+      "consoleErrors": []
+    },
+    "contact@360": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [
+        "e.g. Maya Shenoy — 14px",
+        "e.g. maya@gitam.edu — 14px",
+        "Tell us what you are building or what brings you to Aegion... — 14px"
+      ],
+      "imagesMissingDims": 2,
+      "ctaViewports": 0,
+      "docHeightVh": 7.9,
+      "consoleErrors": []
+    },
+    "home@375": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "View All Events & Sprints — 204x16",
+        "Full Dossier & Photos — 135x32",
+        "Full Dossier & Photos — 129x32",
+        "Full Dossier & Photos — 129x32",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 9,
+      "ctaViewports": 0,
+      "docHeightVh": 21.4,
+      "consoleErrors": []
+    },
+    "about@375": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 21.1,
+      "consoleErrors": []
+    },
+    "events@375": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "All Gatherings — 143x36",
+        "Build Sprints — 137x38",
+        "Showcases & Hackathons — 204x38",
+        "Meetups & Systems — 167x38",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 5,
+      "ctaViewports": 0,
+      "docHeightVh": 10,
+      "consoleErrors": []
+    },
+    "stories@375": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 12.5,
+      "consoleErrors": []
+    },
+    "contact@375": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [
+        "e.g. Maya Shenoy — 14px",
+        "e.g. maya@gitam.edu — 14px",
+        "Tell us what you are building or what brings you to Aegion... — 14px"
+      ],
+      "imagesMissingDims": 2,
+      "ctaViewports": 0,
+      "docHeightVh": 7.4,
+      "consoleErrors": []
+    },
+    "home@390": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "View All Events & Sprints — 204x16",
+        "Full Dossier & Photos — 140x16",
+        "Full Dossier & Photos — 136x32",
+        "Full Dossier & Photos — 136x32",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 9,
+      "ctaViewports": 0,
+      "docHeightVh": 20.4,
+      "consoleErrors": []
+    },
+    "about@390": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 19.9,
+      "consoleErrors": []
+    },
+    "events@390": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "All Gatherings — 143x36",
+        "Build Sprints — 137x38",
+        "Showcases & Hackathons — 204x38",
+        "Meetups & Systems — 167x38",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 5,
+      "ctaViewports": 0,
+      "docHeightVh": 9.4,
+      "consoleErrors": []
+    },
+    "stories@390": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 11.9,
+      "consoleErrors": []
+    },
+    "contact@390": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 122x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [
+        "e.g. Maya Shenoy — 14px",
+        "e.g. maya@gitam.edu — 14px",
+        "Tell us what you are building or what brings you to Aegion... — 14px"
+      ],
+      "imagesMissingDims": 2,
+      "ctaViewports": 0,
+      "docHeightVh": 7,
+      "consoleErrors": []
+    },
+    "home@412": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "View All Events & Sprints — 204x16",
+        "Full Dossier & Photos — 140x16",
+        "Full Dossier & Photos — 140x16",
+        "Full Dossier & Photos — 140x16",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 9,
+      "ctaViewports": 0,
+      "docHeightVh": 18.9,
+      "consoleErrors": []
+    },
+    "about@412": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 18.3,
+      "consoleErrors": []
+    },
+    "events@412": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "All Gatherings — 143x36",
+        "Build Sprints — 137x38",
+        "Showcases & Hackathons — 204x38",
+        "Meetups & Systems — 167x38",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 5,
+      "ctaViewports": 0,
+      "docHeightVh": 8.6,
+      "consoleErrors": []
+    },
+    "stories@412": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 11.1,
+      "consoleErrors": []
+    },
+    "contact@412": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 140x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 110x21",
+        "Join & Contact — 110x21"
+      ],
+      "gaps": [],
+      "inputs": [
+        "e.g. Maya Shenoy — 14px",
+        "e.g. maya@gitam.edu — 14px",
+        "Tell us what you are building or what brings you to Aegion... — 14px"
+      ],
+      "imagesMissingDims": 2,
+      "ctaViewports": 0,
+      "docHeightVh": 6.6,
+      "consoleErrors": []
+    },
+    "home@430": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "View All Events & Sprints — 204x16",
+        "Full Dossier & Photos — 140x16",
+        "Full Dossier & Photos — 140x16",
+        "Full Dossier & Photos — 140x16",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 141x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 111x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 9,
+      "ctaViewports": 0,
+      "docHeightVh": 17.9,
+      "consoleErrors": []
+    },
+    "about@430": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 141x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 111x21",
+        "Join & Contact — 111x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 17.1,
+      "consoleErrors": []
+    },
+    "events@430": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "All Gatherings — 143x36",
+        "Build Sprints — 137x38",
+        "Showcases & Hackathons — 204x38",
+        "Meetups & Systems — 167x38",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 141x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 111x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 5,
+      "ctaViewports": 0,
+      "docHeightVh": 8.1,
+      "consoleErrors": []
+    },
+    "stories@430": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 141x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 111x21",
+        "Join & Contact — 111x21"
+      ],
+      "gaps": [],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 10.2,
+      "consoleErrors": []
+    },
+    "contact@430": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 47x21",
+        "Manifesto & About — 141x21",
+        "Sprints & Events — 123x21",
+        "Builder Stories — 111x21",
+        "Join & Contact — 111x21"
+      ],
+      "gaps": [],
+      "inputs": [
+        "e.g. Maya Shenoy — 14px",
+        "e.g. maya@gitam.edu — 14px",
+        "Tell us what you are building or what brings you to Aegion... — 14px"
+      ],
+      "imagesMissingDims": 2,
+      "ctaViewports": 0,
+      "docHeightVh": 6.3,
+      "consoleErrors": []
+    },
+    "home@landscape": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 75x33",
+        "Gatherings — 106x33",
+        "Stories — 81x33",
+        "Connect — 91x33",
+        "View All Events & Sprints — 204x16",
+        "Full Dossier & Photos — 92x32",
+        "Full Dossier & Photos — 88x32",
+        "Full Dossier & Photos — 88x32"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [],
+      "imagesMissingDims": 9,
+      "ctaViewports": 0,
+      "docHeightVh": 6.1,
+      "consoleErrors": []
+    },
+    "about@landscape": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 76x33",
+        "Gatherings — 106x33",
+        "Stories — 81x33",
+        "Connect — 91x33",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 50x22",
+        "Manifesto & About — 148x22",
+        "Sprints & Events — 130x22"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 7.4,
+      "consoleErrors": []
+    },
+    "events@landscape": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 75x33",
+        "Gatherings — 107x33",
+        "Stories — 81x33",
+        "Connect — 91x33",
+        "All Gatherings — 143x36",
+        "Build Sprints — 137x38",
+        "Showcases & Hackathons — 204x38",
+        "Meetups & Systems — 167x38"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [],
+      "imagesMissingDims": 5,
+      "ctaViewports": 0,
+      "docHeightVh": 3.2,
+      "consoleErrors": []
+    },
+    "stories@landscape": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 75x33",
+        "Gatherings — 106x33",
+        "Stories — 81x33",
+        "Connect — 91x33",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 50x22",
+        "Manifesto & About — 148x22",
+        "Sprints & Events — 130x22"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 3.9,
+      "consoleErrors": []
+    },
+    "contact@landscape": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 75x33",
+        "Gatherings — 106x33",
+        "Stories — 81x33",
+        "Connect — 92x33",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 50x22",
+        "Manifesto & About — 148x22",
+        "Sprints & Events — 130x22"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [
+        "e.g. Maya Shenoy — 14px",
+        "e.g. maya@gitam.edu — 14px",
+        "Tell us what you are building or what brings you to Aegion... — 14px"
+      ],
+      "imagesMissingDims": 2,
+      "ctaViewports": 0,
+      "docHeightVh": 2.7,
+      "consoleErrors": []
+    },
+    "home@tablet": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 75x33",
+        "Gatherings — 106x33",
+        "Stories — 81x33",
+        "Connect — 91x33",
+        "View All Events & Sprints — 204x16",
+        "Full Dossier & Photos — 81x32",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 50x22"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [],
+      "imagesMissingDims": 9,
+      "ctaViewports": 0,
+      "docHeightVh": 6.8,
+      "consoleErrors": []
+    },
+    "about@tablet": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 76x33",
+        "Gatherings — 106x33",
+        "Stories — 81x33",
+        "Connect — 91x33",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 50x22",
+        "Manifesto & About — 148x22",
+        "Sprints & Events — 130x22"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 8.7,
+      "consoleErrors": []
+    },
+    "events@tablet": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 75x33",
+        "Gatherings — 107x33",
+        "Stories — 81x33",
+        "Connect — 91x33",
+        "All Gatherings — 143x36",
+        "Build Sprints — 137x38",
+        "Showcases & Hackathons — 204x38",
+        "Meetups & Systems — 167x38"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [],
+      "imagesMissingDims": 5,
+      "ctaViewports": 0,
+      "docHeightVh": 3.6,
+      "consoleErrors": []
+    },
+    "stories@tablet": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 75x33",
+        "Gatherings — 106x33",
+        "Stories — 81x33",
+        "Connect — 91x33",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 50x22",
+        "Manifesto & About — 148x22",
+        "Sprints & Events — 130x22"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [],
+      "imagesMissingDims": 7,
+      "ctaViewports": 0,
+      "docHeightVh": 4.4,
+      "consoleErrors": []
+    },
+    "contact@tablet": {
+      "overflow": null,
+      "targets": [
+        "Skip to main content — 170x39",
+        "Home — 74x33",
+        "About — 75x33",
+        "Gatherings — 106x33",
+        "Stories — 81x33",
+        "Connect — 92x33",
+        "Aegion Dynamic Community Home — 148x40",
+        "Home — 50x22",
+        "Manifesto & About — 148x22",
+        "Sprints & Events — 130x22"
+      ],
+      "gaps": [
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px",
+        "Home → gap 2px",
+        "About → gap 2px",
+        "Gatherings → gap 2px",
+        "Stories → gap 2px"
+      ],
+      "inputs": [
+        "e.g. Maya Shenoy — 14px",
+        "e.g. maya@gitam.edu — 14px",
+        "Tell us what you are building or what brings you to Aegion... — 14px"
+      ],
+      "imagesMissingDims": 2,
+      "ctaViewports": 0,
+      "docHeightVh": 3,
+      "consoleErrors": []
+    }
+  },
+  "textZoom": {
+    "home-130": {
+      "overflow": null
+    },
+    "home-200": {
+      "overflow": null
+    },
+    "contact-130": {
+      "overflow": null
+    },
+    "contact-200": {
+      "overflow": null
+    }
+  },
+  "slow4g": {
+    "home": {
+      "lcp": 24168,
+      "longTasks": 8,
+      "resources": 71,
+      "bytesKB": 4656,
+      "byType": {
+        "js": "4398KB",
+        "font": "1KB",
+        "img": "257KB"
+      },
+      "wallMs": 26698
+    },
+    "events": {
+      "lcp": 25744,
+      "longTasks": 5,
+      "resources": 73,
+      "bytesKB": 4918,
+      "byType": {
+        "js": "4398KB",
+        "font": "1KB",
+        "img": "519KB"
+      },
+      "wallMs": 26840
+    },
+    "contact": {
+      "lcp": 23556,
+      "longTasks": 5,
+      "resources": 70,
+      "bytesKB": 4583,
+      "byType": {
+        "js": "4398KB",
+        "font": "1KB",
+        "img": "184KB"
+      },
+      "wallMs": 26810
+    }
+  }
+}

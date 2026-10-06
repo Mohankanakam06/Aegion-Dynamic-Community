@@ -64,7 +64,7 @@ export function Header() {
       </a>
 
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 pt-safe transition-all duration-300 ${
           isScrolled
             ? 'bg-[var(--surface-glass)] backdrop-blur-md shadow-xs border-b border-[var(--line)] py-3'
             : 'bg-transparent py-4 sm:py-5'
