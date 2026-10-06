@@ -27,9 +27,14 @@ import { BentoGrid, BentoCard } from '../components/ui/BentoGrid';
 import { Marquee } from '../components/ui/Marquee';
 import { events, EventItem } from '../data/events';
 import { testimonials, communityMetrics } from '../data/testimonials';
+import { Photo } from '../components/ui/Photo';
 import buildHeroPhoto from '../assets/images/build-hours/1.jpg';
 import proximaHeroPhoto from '../assets/images/proxima/1.jpg';
 import communityFeature from '../assets/images/community-feature.jpg';
+import heroAvif from '../assets/images/build-hours/1.jpg?w=400;600;760&format=avif&as=srcset&imagetools';
+import heroWebp from '../assets/images/build-hours/1.jpg?w=400;600;760&format=webp&as=srcset&imagetools';
+import heroJpg from '../assets/images/build-hours/1.jpg?w=400;600;760&format=jpeg&as=srcset&imagetools';
+import heroMeta from '../assets/images/build-hours/1.jpg?w=760&format=jpeg&as=meta&imagetools';
 
 const universityPartners = [
   'GITAM Deemed University',
@@ -71,7 +76,7 @@ export function Home() {
 
               {/* Main Headline */}
               <div className="space-y-3">
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[var(--ink)] leading-[1.05]">
+                <h1 className="text-[clamp(2.75rem,12vw,4rem)] sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[var(--ink)] leading-[1.05]">
                   Connect. <span className="text-[var(--ember)]">Build.</span> Grow.
                 </h1>
                 <BlurText
@@ -94,7 +99,7 @@ export function Home() {
                 </MagneticButton>
                 <Link
                   to="/events"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--surface)] hover:bg-[var(--cream-soft)] border border-[var(--line-strong)] text-[var(--ink)] font-semibold text-sm shadow-xs hover:shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--surface)] hover:bg-[var(--cream-soft)] border border-[var(--line-strong)] text-[var(--ink)] font-semibold text-sm shadow-xs hover:shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2"
                 >
                   <span>Explore Gatherings</span>
                   <ArrowUpRight className="w-4 h-4 text-[var(--ink-faint)]" aria-hidden="true" />
@@ -108,7 +113,7 @@ export function Home() {
               </div>
 
               {/* Live Session Metadata Bar */}
-              <div className="pt-4 border-t border-[var(--line)] flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[var(--ink-soft)] font-mono">
+              <div className="pt-4 border-t border-[var(--line)] grid grid-cols-1 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 text-xs text-[var(--ink-soft)] font-mono">
                 <div className="flex items-center gap-2">
                   <Clock className="w-3.5 h-3.5 text-[var(--ember)] shrink-0" aria-hidden="true" />
                   <span>Sundays 11:00 AM IST</span>
@@ -140,10 +145,18 @@ export function Home() {
                     }
                   }}
                 >
-                  <img
-                    src={buildHeroPhoto}
+                  <Photo
+                    priority
+                    cover
+                    className="h-72 sm:h-84"
+                    src={heroMeta.src}
+                    width={heroMeta.width}
+                    height={heroMeta.height}
+                    avifSrcSet={heroAvif}
+                    webpSrcSet={heroWebp}
+                    srcSet={heroJpg}
+                    sizes="(max-width: 640px) calc(100vw - 56px), (max-width: 1024px) 640px, 480px"
                     alt="Aegion Sunday Build Session in Vizag"
-                    className="w-full h-72 sm:h-84 object-cover rounded-2xl transition-transform duration-500 group-hover:scale-103"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/90 via-[var(--ink)]/25 to-transparent flex flex-col justify-end p-6 text-white">
                     <Eyebrow tone="dark" lead="Sunday Build Session" tail="11:00 AM" className="mb-1" />
@@ -156,8 +169,9 @@ export function Home() {
                   </div>
                 </div>
 
-                {/* Floating Proof-of-Work Badge */}
-                <div className="absolute -bottom-4 -left-4 bg-[var(--surface)] p-3.5 rounded-2xl border border-[var(--line-strong)] shadow-xl max-w-[210px] hidden sm:flex items-center gap-3">
+                {/* Proof-of-Work chip: in flow under the photo on mobile,
+                    floating at the outer corner from 640px up */}
+                <div className="mt-3 flex items-center gap-3 rounded-2xl border border-[var(--line-strong)] bg-[var(--surface)] p-3.5 sm:absolute sm:-bottom-4 sm:-left-4 sm:mt-0 sm:max-w-[210px] sm:shadow-xl">
                   <div className="w-10 h-10 rounded-xl bg-[var(--ember-soft)] text-[var(--ember)] flex items-center justify-center shrink-0">
                     <Code2 className="w-5 h-5" aria-hidden="true" />
                   </div>
