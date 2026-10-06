@@ -9,10 +9,12 @@ import { CardBlocks } from '../kit/blocks-cards';
 import { MotionBlocks } from '../kit/blocks-motion';
 import { FormBlocks } from '../kit/blocks-forms';
 import { FeedbackBlocks } from '../kit/blocks-feedback';
+import { ChromeBlocks } from '../kit/blocks-chrome';
 
 const INDEX = [
   { id: 'labels', label: '⚑ Labels' },
   { id: 'numbertag', label: '⚑ NumberTag' },
+  { id: 'mobilenav', label: '⚑ MobileNav' },
   { id: 'container', label: 'Container' },
   { id: 'eyebrow', label: 'Eyebrow' },
   { id: 'tokens-semantic', label: '⚑ Semantics' },
@@ -80,6 +82,7 @@ export default function KitPage() {
 
       <Container measure="wide" className="mt-10 space-y-10">
         <LabelBlocks />
+        <ChromeBlocks />
         <FoundationBlocks />
         <ButtonBlocks />
         <CardBlocks />

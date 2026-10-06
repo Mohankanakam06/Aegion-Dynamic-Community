@@ -468,6 +468,7 @@
   .animate-spotlight,
   .animate-marquee,
   .animate-pulse-soft,
+  .nav-link-in,
   .skeleton-shimmer::after {
     animation: none !important;
   }
@@ -619,9 +620,31 @@ textarea:-webkit-autofill {
 }
 .sheet-content {
   animation: sheet-right-in 200ms var(--ease-standard);
+  transition: transform 160ms var(--ease-standard);
 }
 .sheet-content[data-state='closed'] {
   animation: sheet-right-out 150ms var(--ease-standard) forwards;
+}
+.sheet-content-bottom {
+  animation: sheet-up-in 200ms var(--ease-standard);
+  transition: transform 160ms var(--ease-standard);
+}
+.sheet-content-bottom[data-state='closed'] {
+  animation: sheet-up-out 150ms var(--ease-standard) forwards;
+}
+@keyframes sheet-up-out {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(24px); opacity: 0; }
+}
+
+/* M2 — mobile nav link stagger (40ms; transform+opacity only) */
+@keyframes nav-link-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.nav-link-in {
+  animation: nav-link-in 300ms var(--ease-standard) both;
+  animation-delay: calc(var(--i, 0) * 40ms);
 }
 
 /* A2 — Eyebrow pulsing dot (2.4s; static under reduced motion) */
