@@ -11,6 +11,7 @@
 - **2026-10-06:** Dead-code retirement approved: delete `YearInEvents`, `works-wheel`, `Card3D`, `BrandTicker`, `TiltCard`, `Spotlight`, `BorderBeam`, `MagneticButton`, `BlurText`, `GooeyNav` (+css) **only in the gate that replaces each**, after grepping for imports. gsap/lenis removal deferred to Phase 4.
 - **2026-10-06:** Contact form: build UI with clearly marked placeholder submit handler; NO fake success in production builds. User picks the backend (Formspree / Web3Forms / serverless Discord webhook) before Gate E.
 - **2026-10-06:** A6 Button primary: kit shows two candidates — (1) white on `#C4460E` (4.96:1, recommended), (2) ink on `#E85D1A`. User decides after seeing the kit.
+- **2026-10-06:** **User-directed copy change (approved):** the weekly sprint moved from Saturday to Sunday. All 25 occurrences updated (`Saturday(s)` → `Sunday(s)`), incl. ICS calendar (`BYDAY=SA` → `SU`, DTSTART/DTEND 2026-10-10 → 2026-10-11, filename `aegion-sunday-sprint.ics`). `docs/baseline/copy-*.txt` intentionally NOT touched — the Gate F copy diff will show exactly this rename.
 - **2026-10-06:** Library install table approved (cva, Radix slot/label/radio-group/toggle-group/tooltip/dialog, sonner, react-hook-form + zod + resolvers, @icons-pack/react-simple-icons, vite-imagetools, playwright + @axe-core/playwright).
 
 ## Open Content Issues (awaiting user's correct values — DO NOT FIX)

@@ -51,7 +51,7 @@ export function About() {
       step: '01',
       time: '4:00 PM',
       title: 'Prompt & Match',
-      desc: 'Builders arrive on Saturday at 4 PM IST, share what they are working on, and pair up across college and skill boundaries.',
+      desc: 'Builders arrive on Sunday at 4 PM IST, share what they are working on, and pair up across college and skill boundaries.',
     },
     {
       step: '02',
@@ -105,7 +105,7 @@ export function About() {
       content: (
         <div>
           <p className="text-[var(--ink)] text-sm md:text-base font-normal mb-4 leading-relaxed">
-            <strong className="font-semibold text-[var(--ember-deep)]">Weekly Saturday Build Cadence:</strong> Transitioned from informal meetups to structured, open-door Saturday build circles at the Vizag Innovation Hub. Weekly attendance surpassed 40 active builders pushing real production repositories.
+            <strong className="font-semibold text-[var(--ember-deep)]">Weekly Sunday Build Cadence:</strong> Transitioned from informal meetups to structured, open-door Sunday build circles at the Vizag Innovation Hub. Weekly attendance surpassed 40 active builders pushing real production repositories.
           </p>
           <div className="p-4 rounded-xl bg-[var(--cream-soft)] border border-[var(--line-strong)] mb-4">
             <span className="font-mono text-xs text-[var(--ink-soft)] block font-semibold">
@@ -228,7 +228,7 @@ export function About() {
             How the <span className="text-[var(--ember)]">Cadence</span> Works
           </h2>
           <p className="text-[var(--ink-soft)] text-sm sm:text-base mt-2">
-            Every Saturday from 4:00 PM to 8:15 PM IST.
+            Every Sunday from 4:00 PM to 8:15 PM IST.
           </p>
         </div>
 

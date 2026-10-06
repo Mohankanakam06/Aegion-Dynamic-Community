@@ -43,7 +43,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 't4',
-    quote: 'The energy in the room during Saturday Build Hours is electrifying. You see students designing Figma systems, writing Rust kernels, and training PyTorch models side-by-side.',
+    quote: 'The energy in the room during Sunday Build Hours is electrifying. You see students designing Figma systems, writing Rust kernels, and training PyTorch models side-by-side.',
     author: 'Disha Nayak',
     role: 'Product Designer & Community Host',
     organization: 'Vignan Institute of Tech',

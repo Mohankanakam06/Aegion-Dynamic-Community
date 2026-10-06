@@ -25,7 +25,7 @@ export function ButtonBlocks() {
                 White on deeper ember #C4460E — 4.96:1 (AA ✓)
               </p>
               <Button data-shot="btn-primary" icon={ArrowRight}>
-                Join Saturday Sprint
+                Join Sunday Sprint
               </Button>
             </div>
             <div className="rounded-[var(--radius-md)] border border-[var(--line)] bg-[var(--cream)] p-5">
@@ -39,7 +39,7 @@ export function ButtonBlocks() {
                 icon={ArrowRight}
                 className="bg-[var(--ember)] text-[var(--ink)] hover:bg-[var(--ember-light)]"
               >
-                Join Saturday Sprint
+                Join Sunday Sprint
               </Button>
             </div>
           </div>

@@ -92,7 +92,7 @@ export function Home() {
                     to="/contact"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--ember)] hover:bg-[var(--ember-deep)] text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all active:translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2"
                   >
-                    <span>Join Saturday Sprint</span>
+                    <span>Join Sunday Sprint</span>
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </MagneticButton>
@@ -115,7 +115,7 @@ export function Home() {
               <div className="pt-4 border-t border-[var(--line)] flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-[var(--ink-soft)] font-mono">
                 <div className="flex items-center gap-2">
                   <Clock className="w-3.5 h-3.5 text-[var(--ember)] shrink-0" aria-hidden="true" />
-                  <span>Saturdays 4:00 PM IST</span>
+                  <span>Sundays 4:00 PM IST</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-[var(--ember)] shrink-0" aria-hidden="true" />
@@ -134,7 +134,7 @@ export function Home() {
                 <div
                   role="button"
                   tabIndex={0}
-                  aria-label="View Aegion Saturday Build Session photo gallery"
+                  aria-label="View Aegion Sunday Build Session photo gallery"
                   className="w-full rounded-2xl overflow-hidden relative cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--ember)]"
                   onClick={() => openLightbox([buildHeroPhoto, proximaHeroPhoto, communityFeature], 0)}
                   onKeyDown={(e) => {
@@ -146,12 +146,12 @@ export function Home() {
                 >
                   <img
                     src={buildHeroPhoto}
-                    alt="Aegion Saturday Build Session in Vizag"
+                    alt="Aegion Sunday Build Session in Vizag"
                     className="w-full h-72 sm:h-84 object-cover rounded-2xl transition-transform duration-500 group-hover:scale-103"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/90 via-[var(--ink)]/25 to-transparent flex flex-col justify-end p-6 text-white">
                     <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--amber)] font-semibold mb-1">
-                      Saturday Build Session // 04:00 PM
+                      Sunday Build Session // 04:00 PM
                     </span>
                     <h3 className="font-display text-lg font-bold leading-snug">
                       Distraction-Free Collaborative Flow
@@ -251,7 +251,7 @@ export function Home() {
             Icon={Terminal}
             tag="01 // CODE FIRST"
             description="We replace speculative presentations with active terminal sessions and live deployments. Real code running in production is the only true currency of a craftsperson."
-            cta="Explore Saturday Build Hours"
+            cta="Explore Sunday Build Hours"
             href="/events"
           />
           <BentoCard
@@ -452,7 +452,7 @@ export function Home() {
                 to="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[var(--ember)] hover:bg-[var(--ember-deep)] text-white text-sm font-semibold shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
-                <span>Join Next Saturday Sprint</span>
+                <span>Join Next Sunday Sprint</span>
                 <Rocket className="w-4 h-4" aria-hidden="true" />
               </Link>
               <Link

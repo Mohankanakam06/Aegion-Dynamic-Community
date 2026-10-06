@@ -106,12 +106,12 @@ export function Contact() {
       'VERSION:2.0',
       'PRODID:-//Aegion Dynamic Community//Weekly Build Hours//EN',
       'BEGIN:VEVENT',
-      'SUMMARY:Aegion Saturday Build Sprint',
+      'SUMMARY:Aegion Sunday Build Sprint',
       'DESCRIPTION:Weekly collaborative build sprint with student engineers in Vizag. Real code, PRs, and demo circles.',
       'LOCATION:Vizag Innovation Hub & Discord, Visakhapatnam, AP',
-      'RRULE:FREQ=WEEKLY;BYDAY=SA',
-      'DTSTART:20261010T103000Z',
-      'DTEND:20261010T143000Z',
+      'RRULE:FREQ=WEEKLY;BYDAY=SU',
+      'DTSTART:20261011T103000Z',
+      'DTEND:20261011T143000Z',
       'END:VEVENT',
       'END:VCALENDAR',
     ].join('\r\n');
@@ -120,7 +120,7 @@ export function Contact() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'aegion-saturday-sprint.ics');
+    link.setAttribute('download', 'aegion-sunday-sprint.ics');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -263,7 +263,7 @@ export function Contact() {
                 <div>
                   <h4 className="font-bold text-sm text-[var(--ink)]">Weekly Sprint Cadence</h4>
                   <p className="text-xs text-[var(--ink-soft)] leading-relaxed">
-                    Every Saturday from 4:00 PM to 8:15 PM IST.
+                    Every Sunday from 4:00 PM to 8:15 PM IST.
                   </p>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export function Contact() {
                       className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[var(--ember)] hover:bg-[var(--ember-deep)] text-white text-xs font-mono font-semibold transition-colors cursor-pointer shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)]"
                     >
                       <Download className="w-4 h-4" />
-                      <span>Add Saturday Sprint to Calendar</span>
+                      <span>Add Sunday Sprint to Calendar</span>
                     </button>
                     <button
                       onClick={handleReset}

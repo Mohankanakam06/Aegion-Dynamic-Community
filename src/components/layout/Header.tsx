@@ -94,7 +94,7 @@ export function Header() {
               to="/contact"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 min-h-[44px] rounded-full bg-[var(--ember)] hover:bg-[var(--ember-deep)] text-white text-xs font-semibold tracking-wide shadow-xs hover:shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 active:translate-y-0.5"
             >
-              <span>Join Saturday Sprint</span>
+              <span>Join Sunday Sprint</span>
               <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
           </div>
@@ -170,11 +170,11 @@ export function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className="w-full min-h-[48px] flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[var(--ember)] hover:bg-[var(--ember-deep)] text-white text-sm font-semibold shadow-xs transition-all"
                   >
-                    <span>Join Saturday Sprint</span>
+                    <span>Join Sunday Sprint</span>
                     <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                   <p className="font-mono text-[11px] text-[var(--ink-soft)] text-center mt-3">
-                    Vizag Innovation Hub // Saturdays 4:00 PM IST
+                    Vizag Innovation Hub // Sundays 4:00 PM IST
                   </p>
                 </div>
               </nav>

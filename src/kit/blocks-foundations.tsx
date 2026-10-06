@@ -78,7 +78,7 @@ export function FoundationBlocks() {
         </KitRow>
         <KitRow label="Underline draw (scrolls into view once) + wrap survival">
           <h3 className="max-w-[26ch] text-2xl font-extrabold text-balance">
-            Built on <Accent underline>Proof of Work</Accent>, shipped every single Saturday
+            Built on <Accent underline>Proof of Work</Accent>, shipped every single Sunday
           </h3>
         </KitRow>
       </KitBlock>
@@ -108,7 +108,7 @@ export function FoundationBlocks() {
                   How the <Accent>Cadence</Accent> Works
                 </>
               }
-              lead="Every Saturday from 4:00 PM to 8:15 PM IST."
+              lead="Every Sunday from 4:00 PM to 8:15 PM IST."
             />
           </div>
         </div>

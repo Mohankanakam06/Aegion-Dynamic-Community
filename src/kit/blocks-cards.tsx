@@ -45,7 +45,7 @@ export function CardBlocks() {
                 webpSrcSet={badgeWebp}
                 srcSet={badgeJpg}
                 sizes="(max-width: 768px) 100vw, 448px"
-                alt="Aegion Saturday Build Session in Vizag"
+                alt="Aegion Sunday Build Session in Vizag"
               />
               <Badge variant="onPhoto" className="absolute left-3 top-3 z-10">
                 Weekly Cohort

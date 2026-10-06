@@ -48,7 +48,7 @@ export function MotionBlocks() {
             View Event Calendar
           </Button>
           <Button icon={ArrowRight} className="focus-visible:focus-ring-cream">
-            Join Next Saturday Sprint
+            Join Next Sunday Sprint
           </Button>
         </KitRow>
         <KitRow label="IconButton inverse / Badge ink + onPhoto">

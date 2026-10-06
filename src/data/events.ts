@@ -38,7 +38,7 @@ export const events: EventItem[] = [
     title: 'Aegion Build Hours',
     tag: 'Weekly Cohort',
     category: 'build',
-    date: 'Every Saturday',
+    date: 'Every Sunday',
     time: '4:00 PM - 8:00 PM IST',
     location: 'Vizag Innovation Hub & Hybrid Discord',
     attendees: '40+ Builders / Session',
