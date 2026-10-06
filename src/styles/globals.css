@@ -559,7 +559,14 @@
 
 /* M3 — sticky action bar never covers content (mounted only when visible) */
 body:has(.sticky-action-bar) main {
-  padding-bottom: 5rem;
+  padding-bottom: 4.5rem;
+}
+
+/* M3 — toasts lift above the sticky action bar (Sonner offset vars; !important
+   beats the inline offset props) */
+body:has(.sticky-action-bar) [data-sonner-toaster] {
+  --offset-bottom: calc(4.5rem + env(safe-area-inset-bottom)) !important;
+  --mobile-offset-bottom: calc(4.5rem + env(safe-area-inset-bottom)) !important;
 }
 
 /* B2 — Browser autofill: keep the cream/ink treatment (kills the yellow/blue default) */

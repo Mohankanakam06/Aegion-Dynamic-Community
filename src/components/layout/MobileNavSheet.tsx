@@ -3,6 +3,7 @@ import { cn } from '../../lib/utils';
 import { Sheet, SheetContent, SheetTitle, SheetDescription } from '../ui/Sheet';
 import { Button } from '../ui/Button';
 import { Eyebrow } from '../brand/Eyebrow';
+import { CTA_JOIN_LABEL } from '../../lib/copy';
 import logoNav from '../../assets/images/logo.svg';
 
 /**
@@ -71,7 +72,7 @@ export default function MobileNavSheet({
 
         <div className="mt-auto shrink-0 pt-6">
           <Button asChild size="lg" className="w-full">
-            <Link to="/contact">Join Sunday Sprint</Link>
+            <Link to="/contact">{CTA_JOIN_LABEL}</Link>
           </Button>
           <div className="mt-4 flex justify-center pb-1">
             <Eyebrow lead="Vizag Innovation Hub" tail="Sundays 11:00 AM IST" />

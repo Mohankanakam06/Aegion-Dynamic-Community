@@ -167,7 +167,7 @@ export function About() {
   return (
     <div className="pt-24 sm:pt-28 pb-20 overflow-hidden">
       {/* MANIFESTO HERO */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 sm:mb-20">
+      <section data-hero className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 sm:mb-20">
         <Eyebrow variant="pill" icon={Compass} lead="The Origin" tail="Why We Gather" className="mb-6" />
 
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[var(--ink)] mb-6 sm:mb-8 leading-tight">
@@ -312,7 +312,7 @@ export function About() {
       </section>
 
       {/* CTA BANNER */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section data-cta-band className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="bg-[var(--ink)] text-white p-10 sm:p-14 rounded-3xl shadow-xl">
           <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight text-white">
             Want to get involved in <span className="text-[var(--ember-light)]">Vizag?</span>

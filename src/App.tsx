@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
+import { StickyActionBar } from './components/layout/StickyActionBar';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Events } from './pages/Events';
@@ -75,6 +76,7 @@ export function App() {
             </Routes>
           </main>
           <Footer />
+          <StickyActionBar />
         </div>
       </LazyMotion>
     </MotionConfig>

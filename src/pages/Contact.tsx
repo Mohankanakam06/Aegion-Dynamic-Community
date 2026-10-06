@@ -138,7 +138,7 @@ export function Contact() {
   return (
     <div className="pt-24 sm:pt-28 pb-20 overflow-hidden">
       {/* HERO SECTION */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14 sm:mb-16">
+      <section data-hero className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14 sm:mb-16">
         <Eyebrow variant="pill" icon={Mail} lead="Get Involved" tail="Pull Up a Chair" className="mb-6" />
 
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[var(--ink)] mb-4">

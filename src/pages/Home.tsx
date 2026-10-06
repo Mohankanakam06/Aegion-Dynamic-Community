@@ -59,7 +59,7 @@ export function Home() {
   return (
     <div className="pt-20 sm:pt-24 pb-16 overflow-hidden">
       {/* EDITORIAL HERO */}
-      <AuroraBackground className="pt-8 sm:pt-14 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 border-b border-[var(--line)]">
+      <AuroraBackground data-hero className="pt-8 sm:pt-14 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 border-b border-[var(--line)]">
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* Left Column: Mission & Core Actions (Span 7) */}
@@ -433,7 +433,7 @@ export function Home() {
       </section>
 
       {/* FINAL INVITATION CTA STRIP */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <section data-cta-band className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <Reveal>
           <div className="bg-[var(--ink)] text-white p-8 sm:p-14 rounded-3xl relative overflow-hidden shadow-xl">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display mb-4 leading-tight text-white">

@@ -10,7 +10,7 @@ export function Stories() {
   return (
     <div className="pt-24 sm:pt-28 pb-20 overflow-hidden">
       {/* HERO */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <section data-hero className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
         <Eyebrow variant="pill" icon={MessageSquare} lead="Dispatches" tail="Notes from the Floor" className="mb-6" />
 
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[var(--ink)] mb-4">
@@ -129,7 +129,7 @@ export function Stories() {
       </section>
 
       {/* SHARE YOUR STORY CTA */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section data-cta-band className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="bg-[var(--surface)] p-10 sm:p-14 rounded-3xl border border-[var(--line-strong)] shadow-sm">
           <div className="w-12 h-12 rounded-2xl bg-[var(--ember-soft)] text-[var(--ember)] flex items-center justify-center mx-auto mb-6">
             <MessageSquare className="w-6 h-6" aria-hidden="true" />

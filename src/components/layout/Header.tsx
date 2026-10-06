@@ -4,6 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 import logoNav from '../../assets/images/logo.svg';
 import GooeyNav from '../ui/GooeyNav';
 import { MobileNav } from './MobileNav';
+import { CTA_JOIN_LABEL } from '../../lib/copy';
 
 interface NavItem {
   name: string;
@@ -69,7 +70,7 @@ export function Header() {
               to="/contact"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 min-h-[44px] rounded-full bg-[var(--ember-deep)] hover:bg-[var(--ember-dark)] text-white text-xs font-semibold tracking-wide shadow-xs hover:shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember-deep)] focus-visible:ring-offset-2 active:translate-y-0.5"
             >
-              <span>Join Sunday Sprint</span>
+              <span>{CTA_JOIN_LABEL}</span>
               <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
           </div>
