@@ -1,17 +1,27 @@
 import { useEffect } from 'react';
 import { Container } from '../components/layout/Container';
 import { Badge } from '../components/ui/Badge';
+import { Toaster } from '../components/ui/Toaster';
 import { LabelBlocks } from '../kit/blocks-labels';
 import { FoundationBlocks } from '../kit/blocks-foundations';
 import { ButtonBlocks } from '../kit/blocks-buttons';
 import { CardBlocks } from '../kit/blocks-cards';
 import { MotionBlocks } from '../kit/blocks-motion';
+import { FormBlocks } from '../kit/blocks-forms';
+import { FeedbackBlocks } from '../kit/blocks-feedback';
 
 const INDEX = [
   { id: 'labels', label: '⚑ Labels' },
   { id: 'numbertag', label: '⚑ NumberTag' },
   { id: 'container', label: 'Container' },
   { id: 'eyebrow', label: 'Eyebrow' },
+  { id: 'tokens-semantic', label: '⚑ Semantics' },
+  { id: 'field', label: 'Field' },
+  { id: 'input', label: 'Input' },
+  { id: 'choicechips', label: 'ChoiceChips' },
+  { id: 'toast', label: 'Toast' },
+  { id: 'feedback-primitives', label: 'Feedback' },
+  { id: 'dialog', label: 'Dialog' },
   { id: 'accent', label: 'Accent' },
   { id: 'sectionheader', label: 'SectionHeader' },
   { id: 'links', label: 'Link' },
@@ -74,7 +84,10 @@ export default function KitPage() {
         <ButtonBlocks />
         <CardBlocks />
         <MotionBlocks />
+        <FormBlocks />
+        <FeedbackBlocks />
       </Container>
+      <Toaster />
     </div>
   );
 }

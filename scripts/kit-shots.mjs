@@ -90,6 +90,51 @@ try {
   await page.waitForTimeout(250);
   await shotBlock(page, '[data-shot="btn-inverse"]', 'state-inverse-hover.png');
 
+  if (GATE === 'gate-b') {
+    // Input: focus ring (box-shadow, no layout shift)
+    await page.locator('[data-shot="input-pill"]').focus();
+    await page.waitForTimeout(250);
+    await shotBlock(page, '[data-shot="input-pill"]', 'state-input-focus.png');
+
+    // ChoiceChips: keyboard — focus first chip, ArrowRight to second
+    await page.locator('#choicechips [role="radio"]').first().focus();
+    await page.keyboard.press('ArrowRight');
+    await page.waitForTimeout(250);
+    await shotBlock(page, '#choicechips [role="radio"]', 'state-chips-keyboard.png');
+
+    // Dialog: open and capture (bottom sheet behavior verified at 375 below)
+    await page.click('[data-shot="dialog-open"]');
+    await page.waitForTimeout(450);
+    await page.screenshot({ path: join(OUT, 'state-dialog-open.png') });
+    results.shots.push('state-dialog-open.png');
+    console.log('  ✓ state-dialog-open.png');
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(350);
+
+    // Sheet: open and capture
+    await page.click('[data-shot="sheet-open"]');
+    await page.waitForTimeout(450);
+    await page.screenshot({ path: join(OUT, 'state-sheet-open.png') });
+    results.shots.push('state-sheet-open.png');
+    console.log('  ✓ state-sheet-open.png');
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(350);
+
+    // Toast: trigger and capture the viewport with the toast visible
+    await page.click('text=Success (copy email)');
+    await page.waitForTimeout(600);
+    await page.screenshot({ path: join(OUT, 'state-toast.png') });
+    results.shots.push('state-toast.png');
+    console.log('  ✓ state-toast.png');
+
+    // Tooltip: hover the icon button
+    await page.hover('[data-shot="tooltip-btn"]');
+    await page.waitForTimeout(800);
+    await page.screenshot({ path: join(OUT, 'state-tooltip.png'), clip: { x: 0, y: 0, width: 800, height: 500 } });
+    results.shots.push('state-tooltip.png');
+    console.log('  ✓ state-tooltip.png');
+  }
+
   // ---- axe audit (scoped to the kit surface in <main>; the legacy Header/Footer
   // chrome around it has two KNOWN contrast violations fixed at Gate C) ----
   const axe = await new AxeBuilder({ page }).include('main').withTags(['wcag2a', 'wcag2aa']).analyze();
@@ -110,6 +155,15 @@ try {
   await page375.screenshot({ path: join(OUT, 'kit-375.png'), fullPage: true });
   results.shots.push('kit-375.png');
   console.log('  ✓ kit-375.png (full page)');
+  if (GATE === 'gate-b') {
+    // Dialog is a bottom sheet under 640px
+    await page375.click('[data-shot="dialog-open"]');
+    await page375.waitForTimeout(450);
+    await page375.screenshot({ path: join(OUT, 'state-dialog-375.png') });
+    results.shots.push('state-dialog-375.png');
+    console.log('  ✓ state-dialog-375.png (bottom sheet)');
+    await page375.keyboard.press('Escape');
+  }
   await ctx375.close();
 } finally {
   await browser.close();

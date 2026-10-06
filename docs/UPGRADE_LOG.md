@@ -25,9 +25,12 @@
 
 ## Open Decisions / Pending Microcopy
 - **A6 primary color:** user decides between the two kit candidates at Gate A review (kit block `buttons`: candidate 1 white-on-#C4460E 4.97:1 recommended; candidate 2 ink-on-#E85D1A 5.24:1).
-- **Microcopy pending approval:** "(opens in a new tab)" sr-only suffix on external links (A5). Validation/success/error strings arrive at Gate B.
+- **B1 label typography:** kit block `field` — Option 1 sans 13px medium (recommended, matches the new label system) vs Option 2 mono caps 12px (master-spec text).
+- **B2 input shape:** kit block `input` — pill (recommended, matches buttons) vs rounded-xl (today).
+- **Warning token:** swatches in kit block `tokens-semantic` — proposal: text `#B45309` (4.87:1), keep `#D97706` for icons/large shapes only.
+- **Microcopy pending approval:** "(opens in a new tab)" sr-only suffix (A5) · toasts "Email copied to clipboard." / "Message failed to send. Try again." · Dialog/Sheet close aria-label "Close".
 - **Contact backend:** user chooses before Gate E.
-- **Gate B heads-up:** `--color-warning` (#D97706) is 3.09:1 on cream — fails AA; a darker warning text token needs approval with the Gate B swatches. `--ink-muted` (3.88:1) must not carry real text.
+- `--ink-muted` (3.88:1) is placeholders-only now; counters use `--ink-faint` (5.75:1).
 
 ## Gate A Notes
 - LazyMotion wired with `domAnimation` (zero bundle cost today: legacy `motion.*` components already include those features). **Switch to `domMax` at Gate C** for layoutId pills — one-line change in `src/App.tsx`.
@@ -49,15 +52,21 @@
   - Created `docs/UPGRADE_RULES.md` and `docs/UPGRADE_LOG.md`.
   - Reverted dark theme code in `index.html`, `src/styles/globals.css`, and `src/components/layout/Header.tsx`.
 - **Phase 1 — Baseline & Audit:** route screenshots + copy dumps in `docs/baseline/`; inventory delivered 2026-10-06 (component map, duplication tally, install table, typo list). Approved.
-- **Gate A — Foundations A1–A10 (commit pending):**
+- **Gate A — Foundations A1–A10 (commit `71163ae`):**
   - Built: Container, Section, Eyebrow, Accent, SectionHeader, Link, Button (+IconButton, Spinner), Badge, IconTile, Card, Photo, motion/Reveal, motion/Stagger; `components.json` (shadcn, manual init — CLI never touches globals.css); `scripts/check-light-only.mjs` as `prebuild`; dev-only `/__kit` (excluded from prod bundle, verified); `scripts/kit-shots.mjs` (Playwright states + axe), `scripts/contrast.mjs`.
   - Absorbed Phase-2 gaps: container tokens, shadcn init, real Reveal/Stagger.
   - Verified: tsc ✓, 28/28 tests ✓, build ✓ (guard passes), axe /__kit 0 serious/critical, shots at 375/1440 in `docs/gates/gate-a/`.
   - Bundle delta: index +0.25KB gz, vendor-motion +0.01KB gz, CSS +1.48KB gz → **≈ +1.7KB gz total**.
+- **Label style migration (commit `b30b6e8`):** see "Label Style Migration" section above.
+- **Gate B — Forms & Feedback B1–B6 (commit pending):**
+  - Built: Field (label/hint/error wiring, required asterisk), Input (48px, 16px sans, box-shadow focus ring, autofill fix), Textarea (field-sizing auto-grow + counter support), ChoiceChips (Radix RadioGroup, roving tabindex), Toaster (Sonner token-skinned, responsive position), Tooltip (400ms, Esc), Skeleton (token shimmer), Spinner (Gate A), EmptyState, Dialog + Sheet (Radix; focus trap/return, Esc, scroll lock w/o layout shift via scrollbar-gutter; bottom sheet <640px).
+  - axe caught + fixed: unlabeled read-only input, ink-muted counter, failing swatch render. Dialog bottom-sheet offsets reset at ≥640px.
+  - Verified: tsc ✓, 28/28 tests ✓, build ✓ guard ✓, axe /__kit 0 serious/critical; state shots incl. dialog bottom sheet at 375 in `docs/gates/gate-b/`.
+  - Bundle delta: JS unchanged (kit-only so far); CSS +0.9KB gz (overlay keyframes, autofill, scrollbar-gutter).
 
 ## Bundle Baseline (commit `7aeeca5`, pre-Gate-A)
 - JS: index 129.98KB gz, vendor-motion 35.31KB, vendor-gsap 32.74KB, vendor-react 17.48KB, vendor-icons 3.06KB → **~219KB gz total**
 - CSS: 69.32KB (12.50KB gz). Largest image: community-feature.jpg 216KB. logo.svg 188KB.
 
 ## Current Step
-- **Gate A — Foundations A1–A10** (+ container system, shadcn init, Reveal/Stagger, light-only guard, dev-only `/__kit`). In progress.
+- **Gate B complete** (commit below). Next: **Gate C — Chrome & Navigation** (Header/DesktopNav/MobileNav/SkipLink, Footer, Marquee, FilterBar). Waiting on user decisions: A6 button candidate, B1 label typography, B2 input shape, warning token, microcopy batch.

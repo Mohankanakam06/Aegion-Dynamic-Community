@@ -137,6 +137,8 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     color-scheme: light;
+    /* Scroll-lock (Dialog/Sheet) without layout shift */
+    scrollbar-gutter: stable;
   }
 
   body {
@@ -518,6 +520,74 @@
 @utility focus-ring-cream {
   outline: 2px solid var(--focus-ring-on-dark);
   outline-offset: 2px;
+}
+
+/* B2 — Browser autofill: keep the cream/ink treatment (kills the yellow/blue default) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--cream) inset;
+  -webkit-text-fill-color: var(--ink);
+  caret-color: var(--ink);
+  transition: background-color 9999s ease-out;
+}
+
+/* B6 — Dialog & Sheet animations (enter 200ms, exit 150ms; opacity/transform only) */
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes overlay-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes dialog-in {
+  from { opacity: 0; scale: 0.98; }
+  to { opacity: 1; scale: 1; }
+}
+@keyframes dialog-out {
+  from { opacity: 1; scale: 1; }
+  to { opacity: 0; scale: 0.98; }
+}
+@keyframes sheet-up-in {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes sheet-right-in {
+  from { transform: translateX(32px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes sheet-right-out {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(32px); opacity: 0; }
+}
+
+.dialog-overlay {
+  animation: overlay-in 200ms var(--ease-standard);
+}
+.dialog-overlay[data-state='closed'] {
+  animation: overlay-out 150ms var(--ease-standard) forwards;
+}
+.dialog-content {
+  animation: dialog-in 200ms var(--ease-standard);
+}
+.dialog-content[data-state='closed'] {
+  animation: dialog-out 150ms var(--ease-standard) forwards;
+}
+@media (max-width: 639px) {
+  .dialog-content {
+    animation: sheet-up-in 200ms var(--ease-standard);
+  }
+  .dialog-content[data-state='closed'] {
+    animation: dialog-out 150ms var(--ease-standard) forwards;
+  }
+}
+.sheet-content {
+  animation: sheet-right-in 200ms var(--ease-standard);
+}
+.sheet-content[data-state='closed'] {
+  animation: sheet-right-out 150ms var(--ease-standard) forwards;
 }
 
 /* A2 — Eyebrow pulsing dot (2.4s; static under reduced motion) */
