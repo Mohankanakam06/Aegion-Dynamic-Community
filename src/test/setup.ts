@@ -1,5 +1,7 @@
 import { vi } from 'vitest';
 
+(globalThis as any).IS_REACT_ACT_ENVIRONMENT = true;
+
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: vi.fn().mockImplementation((query: string) => ({
