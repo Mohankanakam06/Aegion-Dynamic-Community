@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { MotionConfig } from 'motion/react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -40,21 +41,23 @@ export function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--cream)] text-[var(--ink)] antialiased font-sans selection:bg-[var(--amber)] selection:text-[var(--ink)]">
-      <ScrollToTop />
-      <Header />
-      <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/stories" element={<Stories />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen flex flex-col bg-[var(--cream)] text-[var(--ink)] antialiased font-sans selection:bg-[var(--amber)] selection:text-[var(--ink)]">
+        <ScrollToTop />
+        <Header />
+        <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/stories" element={<Stories />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   );
 }
 

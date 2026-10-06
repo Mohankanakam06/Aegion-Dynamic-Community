@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import logoNav from '../../assets/images/logo.svg';
 import GooeyNav from '../ui/GooeyNav';
 
@@ -20,30 +20,7 @@ const navItems: NavItem[] = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const location = useLocation();
-
-  // Initialize theme from DOM attribute or system
-  useEffect(() => {
-    const currentTheme = (document.documentElement.getAttribute('data-theme') as 'light' | 'dark') || 'light';
-    setTheme(currentTheme);
-  }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    if (nextTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    try {
-      localStorage.setItem('aegion_theme', nextTheme);
-    } catch (e) {
-      // Ignore local storage errors if disabled
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -102,7 +79,7 @@ export function Header() {
             <img
               src={logoNav}
               alt="Aegion Dynamic Community"
-              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02] dark:brightness-110"
+              className="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
           </Link>
 
@@ -111,20 +88,8 @@ export function Header() {
             <GooeyNav items={navItems.map((item) => ({ label: item.name, href: item.path }))} />
           </div>
 
-          {/* Action Button & Theme Toggle */}
+          {/* Action Button */}
           <div className="hidden md:flex items-center gap-3">
-            <button
-              onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-              className="min-w-[44px] min-h-[44px] p-2.5 rounded-full bg-[var(--surface)] border border-[var(--line-strong)] text-[var(--ink)] hover:text-[var(--primary)] hover:border-[var(--primary-border)] transition-colors flex items-center justify-center cursor-pointer shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)]"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-[var(--amber)]" aria-hidden="true" />
-              ) : (
-                <Moon className="w-4 h-4 text-[var(--ink-soft)]" aria-hidden="true" />
-              )}
-            </button>
-
             <Link
               to="/contact"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 min-h-[44px] rounded-full bg-[var(--ember)] hover:bg-[var(--ember-deep)] text-white text-xs font-semibold tracking-wide shadow-xs hover:shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] focus-visible:ring-offset-2 active:translate-y-0.5"
@@ -134,20 +99,8 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Mobile Right Controls: Theme Toggle & Hamburger */}
+          {/* Mobile Hamburger Toggle */}
           <div className="md:hidden flex items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-              className="min-w-[44px] min-h-[44px] p-2.5 rounded-xl bg-[var(--surface)] border border-[var(--line)] text-[var(--ink)] hover:bg-[var(--cream-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ember)] cursor-pointer flex items-center justify-center transition-colors"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-[var(--amber)]" aria-hidden="true" />
-              ) : (
-                <Moon className="w-4 h-4 text-[var(--ink-soft)]" aria-hidden="true" />
-              )}
-            </button>
-
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
@@ -180,7 +133,7 @@ export function Header() {
                   className="flex items-center py-1 min-h-[44px]"
                   aria-label="Aegion Dynamic Community"
                 >
-                  <img src={logoNav} alt="Aegion Dynamic Community" className="h-8 w-auto object-contain dark:brightness-110" />
+                  <img src={logoNav} alt="Aegion Dynamic Community" className="h-8 w-auto object-contain" />
                 </Link>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
@@ -232,4 +185,5 @@ export function Header() {
     </>
   );
 }
+
 export default Header;

@@ -123,92 +123,6 @@
     --font-mono: 'Space Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 
-  /* ==========================================================================
-     DESIGN SYSTEM TOKENS - DARK THEME
-     ========================================================================== */
-  :root[data-theme="dark"],
-  .dark {
-    --color-scheme: dark;
-
-    /* Primary Accent: Vibrant Warm Ember */
-    --primary: #FF783A;
-    --primary-hover: #FF8F57;
-    --primary-active: #E85D1A;
-    --primary-light: #FFA67D;
-    --primary-soft: rgba(232, 93, 26, 0.18);
-    --primary-subtle: rgba(232, 93, 26, 0.10);
-    --primary-glow: rgba(255, 120, 58, 0.26);
-    --primary-border: rgba(255, 120, 58, 0.30);
-
-    --ember: var(--primary);
-    --ember-deep: #FF783A;
-    --ember-dark: #FFA67D;
-    --ember-light: #FFA67D;
-    --ember-soft: rgba(232, 93, 26, 0.18);
-    --ember-subtle: rgba(232, 93, 26, 0.10);
-    --ember-glow: rgba(255, 120, 58, 0.26);
-    --ember-border: rgba(255, 120, 58, 0.30);
-
-    /* Secondary Accent */
-    --amber: #E2A97B;
-    --amber-soft: rgba(242, 201, 165, 0.12);
-    --amber-tint: rgba(242, 201, 165, 0.06);
-    --amber-border: rgba(255, 120, 58, 0.25);
-
-    /* Canvas & Surfaces: Deep Carbon & Obsidian */
-    --cream: #0F0D0B;
-    --cream-soft: #181411;
-    --cream-subtle: #201A15;
-    --surface: #171310;
-    --surface-elevated: #211B16;
-    --surface-glass: rgba(15, 13, 11, 0.92);
-
-    /* Typography & Ink: Warm Ivory & Light Sand */
-    --ink: #FAF5EE;
-    --ink-rgb: 250, 245, 238;
-    --ink-card: #201A15;
-    --ink-card-subtle: #29221C;
-    --ink-soft: #C8BEB3;   /* High contrast ivory-cream */
-    --ink-faint: #988C7E;  /* Secondary text / meta */
-    --ink-muted: #6E6257;  /* Borders and dividers */
-
-    /* Structural Lines */
-    --line: rgba(250, 245, 238, 0.08);
-    --line-strong: rgba(250, 245, 238, 0.16);
-    --line-dark: rgba(255, 255, 255, 0.12);
-
-    /* Semantic Text */
-    --text-primary: #FAF5EE;
-    --text-secondary: #C8BEB3;
-    --text-muted: #988C7E;
-    --text-subtle: #6E6257;
-    --text-inverse: #0F0D0B;
-    --text-inverse-secondary: rgba(15, 13, 11, 0.88);
-    --text-inverse-muted: rgba(15, 13, 11, 0.68);
-
-    /* Semantic Status */
-    --color-success: #4ADE80;
-    --color-success-bg: rgba(74, 222, 128, 0.12);
-    --color-success-border: rgba(74, 222, 128, 0.28);
-    --color-error: #F87171;
-    --color-error-bg: rgba(248, 113, 113, 0.12);
-    --color-error-border: rgba(248, 113, 113, 0.28);
-    --color-warning: #FBBF24;
-    --color-warning-bg: rgba(251, 191, 36, 0.12);
-    --color-warning-border: rgba(251, 191, 36, 0.28);
-    --color-info: #38BDF8;
-    --color-info-bg: rgba(56, 189, 248, 0.12);
-    --color-info-border: rgba(56, 189, 248, 0.28);
-
-    /* Elevation in Dark Mode */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
-    --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.45);
-    --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.55), 0 2px 6px -1px rgba(0, 0, 0, 0.35);
-    --shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.65), 0 4px 12px -2px rgba(0, 0, 0, 0.45);
-    --shadow-xl: 0 24px 64px -12px rgba(0, 0, 0, 0.75);
-    --shadow-glow: 0 12px 32px -4px rgba(255, 120, 58, 0.30);
-  }
-
   /* Reset & Box Sizing */
   *, *::before, *::after {
     box-sizing: border-box;
@@ -222,7 +136,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    color-scheme: light dark;
+    color-scheme: light;
   }
 
   body {
@@ -232,17 +146,11 @@
     line-height: 1.65;
     overflow-x: hidden;
     min-height: 100vh;
-    transition: background-color 250ms ease, color 250ms ease;
   }
 
   ::selection {
     background: #FBDCC4;
     color: #181411;
-  }
-
-  :root[data-theme="dark"] ::selection {
-    background: #FF783A;
-    color: #0F0D0B;
   }
 
   /* Accessible Focus Rings */
@@ -528,15 +436,6 @@
   );
   animation: shimmer 1.5s infinite;
   content: '';
-}
-
-:root[data-theme="dark"] .skeleton-shimmer::after {
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
 }
 
 /* Accessibility: Reduced Motion Support */
